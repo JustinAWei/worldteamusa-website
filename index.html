@@ -49,6 +49,8 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        text-decoration: none;
+        color: inherit;
     }
     
     .logo img {
@@ -221,6 +223,28 @@
     }
 
     @media (max-width: 768px) {
+        .hero-content h1 {
+            font-size: 2rem;
+            line-height: 1.3;
+            word-break: break-word;
+        }
+        
+        .hero-content .subtitle {
+            font-size: 1.1rem;
+            padding: 0 1rem;
+        }
+        
+        .cta-buttons {
+            flex-direction: column;
+            gap: 1rem;
+            padding: 0 1rem;
+        }
+        
+        .cta-buttons .btn {
+            width: 100%;
+            text-align: center;
+        }
+        
         .hero-stats {
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
@@ -256,12 +280,14 @@
         gap: 1.5rem;
         margin-bottom: 3rem;
         justify-items: center;
+        align-items: stretch;
     }
 
     @media (max-width: 768px) {
         .intro-options {
             grid-template-columns: 1fr;
             grid-template-rows: auto;
+            align-items: stretch;
         }
     }
 
@@ -273,8 +299,7 @@
         text-align: center;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        min-height: 320px;
+        height: 100%;
     }
 
     .intro-card h3 {
@@ -293,10 +318,16 @@
     .intro-card p {
         margin-bottom: 1rem;
         flex-grow: 1;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        min-height: 60px;
     }
 
     .intro-card .class-features {
-        margin-bottom: 1.5rem;
+        margin: 1rem 0 1.5rem 0;
+        text-align: left;
     }
 
     .intro-card .btn {
@@ -1065,12 +1096,11 @@
 <!-- Header - Fixed navigation with gym branding -->
 <header>
     <nav class="container">
-        <div class="logo">
-            <img src="assets/world-team-logo.avif" alt="World Team USA Logo">
+        <a href="#home" class="logo">
+            <img src="assets/logo/world-team-usa.avif" alt="World Team USA Logo">
             <span class="logo-text">WORLD TEAM USA</span>
-        </div>
+        </a>
         <ul>
-            <li><a href="#home">Home</a></li>
             <li><a href="#new-student">Training Plans</a></li>
             <li><a href="#classes">Programs</a></li>
             <li><a href="#schedule">Schedule</a></li>
@@ -1084,20 +1114,20 @@
 <!-- Hero Section - Full-screen impact with key messaging and social proof stats -->
 <section id="home" class="hero">
     <div class="hero-slideshow">
-        <div class="hero-slide active" style="background-image: url('assets/group-champs-lg.avif');"></div>
-        <div class="hero-slide" style="background-image: url('assets/women-champs-lg.avif');"></div>
-        <div class="hero-slide" style="background-image: url('assets/kids-bootcamp-lg.avif');"></div>
-        <div class="hero-slide" style="background-image: url('assets/big-group-lg.avif');"></div>
+        <div class="hero-slide active" style="background-image: url('assets/hero/group-champions.avif');"></div>
+        <div class="hero-slide" style="background-image: url('assets/hero/women-champions.avif');"></div>
+        <div class="hero-slide" style="background-image: url('assets/hero/kids-bootcamp.avif');"></div>
+        <div class="hero-slide" style="background-image: url('assets/hero/large-group.avif');"></div>
     </div>
     <div class="hero-overlay"></div>
     <div class="container">
         <div class="hero-content">
-            <img src="assets/world-team-logo.avif" alt="World Team USA Logo" class="hero-logo">
+            <img src="assets/logo/world-team-usa.avif" alt="World Team USA Logo" class="hero-logo">
             <h1>Muay Thai • BJJ • MMA</h1>
             <p class="subtitle">We transform ordinary people into world champions through proven methods and unwavering commitment to excellence.</p>
             <div class="cta-buttons">
-                <a href="#new-student" class="btn btn-primary">View Pricing</a>
-                <a href="#classes" class="btn btn-secondary">Our Programs</a>
+                <a href="#new-student" class="btn btn-primary">Get Started</a>
+                <a href="tel:415-213-5281" class="btn btn-secondary">Contact</a>
             </div>
         </div>
         
@@ -1131,7 +1161,7 @@
             <div class="intro-card">
                 <h3>Drop-In Class</h3>
                 <div class="price">$39</div>
-                <p>Try a single class to get a feel for our training.</p>
+                <p>Try a single class to get a feel for our training. Choose from any Muay Thai, BJJ, or MMA class.</p>
                 <ul class="class-features">
                     <li>Join any regular class</li>
                     <li>Equipment provided</li>
@@ -1196,47 +1226,47 @@
         </div>
         <div class="class-grid">
             <div class="class-card">
-                <img src="assets/muay-thai-training.avif" alt="Muay Thai Training">
+                <img src="assets/classes/muay-thai-training.avif" alt="Muay Thai Training">
                 <div class="class-card-content">
                     <div class="class-card-header">
                         <h3>Muay Thai</h3>
                     </div>
-                    <p>The Art of Eight Limbs. Learn authentic Thai boxing techniques including <strong>punches, kicks, knees, and elbows</strong> through pad work, bag training, and conditioning. Beginners start with stance, footwork, and basic strikes while developing traditional techniques, cardio conditioning, self-defense skills, and mental discipline. <strong>All fitness levels welcome.</strong></p>
+                    <p>The Art of Eight Limbs. Learn authentic Thai boxing techniques including <strong>punches, kicks, knees, and elbows</strong> through pad work, bag training, and conditioning. Develop traditional techniques, cardio conditioning, self-defense skills, and mental discipline through stance, footwork, and striking combinations.</p>
                     <button class="expand-text-btn expand-btn-hidden" onclick="toggleClassDescription(this)">Read More</button>
                 </div>
             </div>
             <div class="class-card">
-                <img src="assets/bjj-training.avif" alt="BJJ Training">
+                <img src="assets/classes/bjj-training.avif" alt="BJJ Training">
                 <div class="class-card-content">
                     <div class="class-card-header">
                         <h3>Brazilian Jiu-Jitsu</h3>
                     </div>
-                    <p>The gentle art of ground fighting. Master <strong>leverage, technique, and strategy</strong> over strength. Learn positions, escapes, submissions, and transitions with focus on technique and timing. Develops ground grappling skills and problem-solving abilities. <strong>Great for smaller people</strong> who want to use technique over strength.</p>
+                    <p>The gentle art of ground fighting. Master <strong>leverage, technique, and strategy</strong> over strength. Learn positions, escapes, submissions, and transitions with emphasis on technique rather than strength and power. Develops ground grappling skills and problem-solving abilities.</p>
                     <button class="expand-text-btn expand-btn-hidden" onclick="toggleClassDescription(this)">Read More</button>
                 </div>
             </div>
             <div class="class-card">
-                <img src="assets/mma.avif" alt="MMA Training">
+                <img src="assets/classes/mma.avif" alt="MMA Training">
                 <div class="class-card-content">
                     <div class="class-card-header">
                         <h3>Mixed Martial Arts</h3>
                     </div>
-                    <p>Combine striking and grappling. The <strong>complete martial arts experience</strong> for serious athletes featuring integration of all martial arts, sparring, technique drilling, and fight preparation. Covers stand-up striking, ground fighting, takedowns & wrestling, and competition preparation. <strong>For dedicated athletes only.</strong></p>
+                    <p>The fastest growing sport in the world. Combine striking and grappling in this <strong>complete martial arts experience</strong> featuring integration of all disciplines. Learn stand-up striking, ground fighting, takedowns & wrestling through technique drilling and controlled practice. Our curriculum teaches the same skills to all students, <strong>regardless of whether you plan to compete.</strong></p>
                     <button class="expand-text-btn expand-btn-hidden" onclick="toggleClassDescription(this)">Read More</button>
                 </div>
             </div>
             <div class="class-card">
-                <img src="assets/kids-bootcamp-lg.avif" alt="Kids Training">
+                <img src="assets/classes/bootcamp.avif" alt="Kids Training">
                 <div class="class-card-content">
                     <div class="class-card-header">
                         <h3>Kids & Family Classes</h3>
                     </div>
-                    <p>Fun, safe martial arts training for <strong>children and families</strong>. Build confidence and discipline together through games, basic techniques, respect, and discipline in a fun, supportive environment. Features <strong>age-appropriate training, character development, family bonding, and anti-bullying skills</strong>.</p>
+                    <p>Fun, safe martial arts training for <strong>children and families</strong>. Build confidence and discipline together through games, basic techniques, respect, and discipline in a supportive environment. Features <strong>age-appropriate training, character development, family bonding, and anti-bullying skills</strong>.</p>
                     <button class="expand-text-btn expand-btn-hidden" onclick="toggleClassDescription(this)">Read More</button>
                 </div>
             </div>
             <div class="class-card">
-                <img src="assets/bootcamp.avif" alt="Bootcamp Training">
+                <img src="assets/classes/bootcamp.avif" alt="Bootcamp Training">
                 <div class="class-card-content">
                     <div class="class-card-header">
                         <h3>6-Week Bootcamp</h3>
@@ -1246,12 +1276,12 @@
                 </div>
             </div>
             <div class="class-card">
-                <img src="assets/girl-training-boxing-gloves.avif" alt="Private Training">
+                <img src="assets/classes/private-training.avif" alt="Private Training">
                 <div class="class-card-content">
                     <div class="class-card-header">
                         <h3>Private Lessons</h3>
                     </div>
-                    <p>Personalized <strong>one-on-one training</strong> tailored to your specific goals, whether beginner self-defense or advanced competition preparation. Includes focused instruction at your pace, technique refinement, and personalized feedback from expert coaches. Features customized training plan, flexible scheduling, and faster skill development. <strong>All skill levels welcome.</strong></p>
+                    <p>Personalized <strong>one-on-one training</strong> tailored to your specific goals, whether beginner self-defense or advanced competition preparation. Includes focused instruction at your pace, technique refinement, and personalized feedback from expert coaches. Features customized training plan, flexible scheduling, and faster skill development.</p>
                     <button class="expand-text-btn expand-btn-hidden" onclick="toggleClassDescription(this)">Read More</button>
                 </div>
             </div>
@@ -1275,129 +1305,14 @@
             <button class="calendar-tab" onclick="showMobileDay('saturday', this)">Saturday</button>
         </div>
         
-        <!-- Mobile Calendar Content -->
-        <div class="calendar-mobile-content active" id="mobile-monday" style="display: none;">
-            <h4 class="mobile-schedule-header">Monday Schedule</h4>
-            <div class="time-block bjj mobile-time-block">11:00 AM - Brazilian Jiu-Jitsu</div>
-            <div class="time-block mobile-time-block">12:00 PM - Muay Thai</div>
-            <div class="time-block open mobile-time-block">2:30 PM - Open Training</div>
-            <div class="time-block kids mobile-time-block">4:30 PM - Kids Muay Thai</div>
-            <div class="time-block family mobile-time-block">5:30 PM - Family Muay Thai</div>
-            <div class="time-block mobile-time-block">6:30 PM - Muay Thai</div>
-            <div class="time-block mobile-time-block">7:30 PM - Muay Thai</div>
-        </div>
-        
-        <div class="calendar-mobile-content" id="mobile-tuesday" style="display: none;">
-            <h4 class="mobile-schedule-header">Tuesday Schedule</h4>
-            <div class="time-block bjj mobile-time-block">11:00 AM - Brazilian Jiu-Jitsu</div>
-            <div class="time-block mobile-time-block">12:00 PM - Muay Thai</div>
-            <div class="time-block open mobile-time-block">2:30 PM - Open Training</div>
-            <div class="time-block conditioning mobile-time-block">5:30 PM - Muay Thai Str & Conditioning</div>
-            <div class="time-block mobile-time-block">6:30 PM - Muay Thai</div>
-            <div class="time-block bjj mobile-time-block">7:30 PM - Brazilian Jiu-Jitsu</div>
-        </div>
-        
-        <div class="calendar-mobile-content" id="mobile-wednesday" style="display: none;">
-            <h4 class="mobile-schedule-header">Wednesday Schedule</h4>
-            <div class="time-block mobile-time-block">12:30 PM - Muay Thai</div>
-            <div class="time-block open mobile-time-block">2:30 PM - Open Training</div>
-            <div class="time-block kids mobile-time-block">4:30 PM - Kids Muay Thai</div>
-            <div class="time-block family mobile-time-block">5:30 PM - Family Muay Thai</div>
-            <div class="time-block mobile-time-block">6:30 PM - Muay Thai</div>
-            <div class="time-block bjj mobile-time-block">7:30 PM - Brazilian Jiu-Jitsu</div>
-        </div>
-        
-        <div class="calendar-mobile-content" id="mobile-thursday" style="display: none;">
-            <h4 class="mobile-schedule-header">Thursday Schedule</h4>
-            <div class="time-block mobile-time-block">12:30 PM - Muay Thai</div>
-            <div class="time-block open mobile-time-block">2:30 PM - Open Training</div>
-            <div class="time-block conditioning mobile-time-block">5:30 PM - Muay Thai Str & Conditioning</div>
-            <div class="time-block mobile-time-block">6:30 PM - Muay Thai</div>
-            <div class="time-block mobile-time-block">7:30 PM - Muay Thai</div>
-        </div>
-        
-        <div class="calendar-mobile-content" id="mobile-friday" style="display: none;">
-            <h4 class="mobile-schedule-header">Friday Schedule</h4>
-            <div class="time-block bjj mobile-time-block">11:00 AM - Brazilian Jiu-Jitsu</div>
-            <div class="time-block mobile-time-block">12:30 PM - Muay Thai</div>
-            <div class="time-block kids mobile-time-block">4:30 PM - Kids Muay Thai</div>
-            <div class="time-block family mobile-time-block">5:30 PM - Family Muay Thai</div>
-            <div class="time-block mobile-time-block">6:30 PM - Muay Thai</div>
-            <div class="time-block mobile-time-block">7:30 PM - Muay Thai</div>
-        </div>
-        
-        <div class="calendar-mobile-content" id="mobile-saturday" style="display: none;">
-            <h4 class="mobile-schedule-header">Saturday Schedule</h4>
-            <div class="time-block mobile-time-block">11:30 AM - Muay Thai</div>
-            <div class="time-block bjj mobile-time-block">12:30 PM - Brazilian Jiu-Jitsu</div>
-            <div class="time-block mma mobile-time-block">1:30 PM - No Gi / MMA</div>
+        <!-- Mobile Calendar Content - Will be populated by JavaScript -->
+        <div id="mobile-calendar-container">
+            <!-- Mobile calendar content will be generated here -->
         </div>
         
         <div class="calendar-container">
-            <div class="calendar-grid">
-                <div class="calendar-day">Monday</div>
-                <div class="calendar-day">Tuesday</div>
-                <div class="calendar-day">Wednesday</div>
-                <div class="calendar-day">Thursday</div>
-                <div class="calendar-day">Friday</div>
-                <div class="calendar-day">Saturday</div>
-
-                <!-- Monday -->
-                <div class="calendar-cell" data-day="Monday">
-                    <div class="time-block bjj">11:00 AM<br>Brazilian Jiu-Jitsu</div>
-                    <div class="time-block">12:00 PM<br>Muay Thai</div>
-                    <div class="time-block open">2:30 PM<br>Open Training</div>
-                    <div class="time-block kids">4:30 PM<br>Kids Muay Thai</div>
-                    <div class="time-block family">5:30 PM<br>Family Muay Thai</div>
-                    <div class="time-block">6:30 PM<br>Muay Thai</div>
-                    <div class="time-block">7:30 PM<br>Muay Thai</div>
-                </div>
-
-                <!-- Tuesday -->
-                <div class="calendar-cell" data-day="Tuesday">
-                    <div class="time-block bjj">11:00 AM<br>Brazilian Jiu-Jitsu</div>
-                    <div class="time-block">12:00 PM<br>Muay Thai</div>
-                    <div class="time-block open">2:30 PM<br>Open Training</div>
-                    <div class="time-block conditioning">5:30 PM<br>Muay Thai Str & Conditioning</div>
-                    <div class="time-block">6:30 PM<br>Muay Thai</div>
-                    <div class="time-block bjj">7:30 PM<br>Brazilian Jiu-Jitsu</div>
-                </div>
-
-                <!-- Wednesday -->
-                <div class="calendar-cell" data-day="Wednesday">
-                    <div class="time-block">12:30 PM<br>Muay Thai</div>
-                    <div class="time-block open">2:30 PM<br>Open Training</div>
-                    <div class="time-block kids">4:30 PM<br>Kids Muay Thai</div>
-                    <div class="time-block family">5:30 PM<br>Family Muay Thai</div>
-                    <div class="time-block">6:30 PM<br>Muay Thai</div>
-                    <div class="time-block bjj">7:30 PM<br>Brazilian Jiu-Jitsu</div>
-                </div>
-
-                <!-- Thursday -->
-                <div class="calendar-cell" data-day="Thursday">
-                    <div class="time-block">12:30 PM<br>Muay Thai</div>
-                    <div class="time-block open">2:30 PM<br>Open Training</div>
-                    <div class="time-block conditioning">5:30 PM<br>Muay Thai Str & Conditioning</div>
-                    <div class="time-block">6:30 PM<br>Muay Thai</div>
-                    <div class="time-block">7:30 PM<br>Muay Thai</div>
-                </div>
-
-                <!-- Friday -->
-                <div class="calendar-cell" data-day="Friday">
-                    <div class="time-block bjj">11:00 AM<br>Brazilian Jiu-Jitsu</div>
-                    <div class="time-block">12:30 PM<br>Muay Thai</div>
-                    <div class="time-block kids">4:30 PM<br>Kids Muay Thai</div>
-                    <div class="time-block family">5:30 PM<br>Family Muay Thai</div>
-                    <div class="time-block">6:30 PM<br>Muay Thai</div>
-                    <div class="time-block">7:30 PM<br>Muay Thai</div>
-                </div>
-
-                <!-- Saturday -->
-                <div class="calendar-cell" data-day="Saturday">
-                    <div class="time-block">11:30 AM<br>Muay Thai</div>
-                    <div class="time-block bjj">12:30 PM<br>Brazilian Jiu-Jitsu</div>
-                    <div class="time-block mma">1:30 PM<br>No Gi / MMA</div>
-                </div>
+            <div class="calendar-grid" id="calendar-grid">
+                <!-- Calendar will be populated by JavaScript -->
             </div>
         </div>
     </div>
@@ -1413,7 +1328,7 @@
         <div class="instructor-grid">
             <div class="instructor-card">
                 <div class="instructor-header" onclick="toggleInstructor(this.nextElementSibling.querySelector('.expand-btn'))">
-                    <img src="assets/coach-owner-kru-sam-p.avif" alt="Kru Sam Phimsoutham" class="instructor-image">
+                    <img src="assets/instructors/kru-sam.avif" alt="Kru Sam Phimsoutham" class="instructor-image">
                     <div class="instructor-overlay">
                         <h3>Kru Sam Phimsoutham</h3>
                         <div class="instructor-title">Owner & Head Instructor</div>
@@ -1440,7 +1355,7 @@
             
             <div class="instructor-card">
                 <div class="instructor-header" onclick="toggleInstructor(this.nextElementSibling.querySelector('.expand-btn'))">
-                    <img src="assets/coach-fred.avif" alt="Frederico Bittar Gomes" class="instructor-image">
+                    <img src="assets/instructors/frederico-gomes.avif" alt="Frederico Bittar Gomes" class="instructor-image">
                     <div class="instructor-overlay">
                         <h3>Frederico Bittar Gomes</h3>
                         <div class="instructor-title">Master Brazilian Jiu-Jitsu Instructor</div>
@@ -1467,7 +1382,7 @@
             
             <div class="instructor-card">
                 <div class="instructor-header" onclick="toggleInstructor(this.nextElementSibling.querySelector('.expand-btn'))">
-                    <img src="assets/coach-conrad.avif" alt="Dr. Conrad Bui" class="instructor-image">
+                    <img src="assets/instructors/conrad-bui.avif" alt="Dr. Conrad Bui" class="instructor-image">
                     <div class="instructor-overlay">
                         <h3>Dr. Conrad Bui</h3>
                         <div class="instructor-title">Brazilian Jiu-Jitsu Instructor</div>
@@ -1494,7 +1409,7 @@
             
             <div class="instructor-card">
                 <div class="instructor-header" onclick="toggleInstructor(this.nextElementSibling.querySelector('.expand-btn'))">
-                    <img src="assets/coach-silverstre.avif" alt="Silvestre Elexsandro" class="instructor-image">
+                    <img src="assets/instructors/silvestre-elexsandro.avif" alt="Silvestre Elexsandro" class="instructor-image">
                     <div class="instructor-overlay">
                         <h3>Silvestre Elexsandro</h3>
                         <div class="instructor-title">Brazilian Jiu-Jitsu Instructor</div>
@@ -1517,7 +1432,7 @@
             
             <div class="instructor-card">
                 <div class="instructor-header" onclick="toggleInstructor(this.nextElementSibling.querySelector('.expand-btn'))">
-                    <img src="assets/coach-luis.avif" alt="Coach Luis" class="instructor-image">
+                    <img src="assets/instructors/luis.avif" alt="Coach Luis" class="instructor-image">
                     <div class="instructor-overlay">
                         <h3>Coach Luis</h3>
                         <div class="instructor-title">Muay Thai Instructor</div>
@@ -1559,17 +1474,23 @@
                 
                 <p>We strive for superiority through our unique curriculum which combines a modern approach with traditional values. Students learn to set short, intermediate, and long-term goals - each level important for achieving success, not just in martial arts, but in everyday life.</p>
                 
-                <p>We wholeheartedly believe there is no superior style of martial arts and no such thing as having the best school. We offer training only to those whose personality, goals and lifestyle align with our philosophy of total commitment to the martial arts.</p>
+                <p>We believe that in order to service our students properly, <strong>all instructors must be totally committed to the martial arts.</strong> We respect every student's different goals, whether it's to become a world champion or simply to nurture the mind, body and spirit.</p>
                 
                 <div class="instructor-highlight">
                     <div class="instructor-profile">
-                        <img src="assets/coach-owner-kru-sam-p.avif" alt="Kru Sam Phimsoutham" class="instructor-avatar">
+                        <img src="assets/instructors/kru-sam.avif" alt="Kru Sam Phimsoutham" class="instructor-avatar">
                         <div class="instructor-info">
-                            <h3>Led by Kru Sam Phimsoutham</h3>
+                            <h3>Founded by Kru Sam Phimsoutham</h3>
                             <p>Owner & Master Instructor</p>
                         </div>
                     </div>
-                    <p>Thai/Lao trainer with generational Muay Thai heritage - Muay Boran and Lerdrit run in his family for generations. His father was a Thai General, trainer and referee in Lumpini Stadium. Kru Sam learned his first lesson at age four, immigrated at seven, and at 18 trained for 10 years under Master Toddy, whose father knew his father. He pioneered Muay Thai in the Bay Area by fighting black belts wherever he could until word spread to legends like Sifu Harlan Lee and the Lozada family.</p>
+                    <p>Thai/Lao trainer with generational Muay Thai heritage - Muay Boran and Lerdrit run in his family for generations. His father was a Thai General, trainer and referee in Lumpini Stadium, and his uncle as well. Kru Sam received his first lesson in Muay Boran at age four.</p>
+                    
+                    <p>After immigrating to the United States at age seven, Kru Sam trained for 10 years under Master Toddy (whose father knew his father) to become certified as "Kru." Because knowing how to fight doesn't always translate to knowing how to teach others, Kru Sam's innate teaching ability, combined with his Muay Boran and Lerdrit background and Master Toddy certification, are keys to his success.</p>
+                    
+                    <p>Kru Sam brought Muay Thai to the Bay Area in 1991, introducing the sport by fighting black belts wherever he could. Word quickly spread to legends like Sifu Harlan Lee, Sifu Shane Lacey, and the Lozada family. SFPD Officer Paul Lozada gave Kru Sam his first teaching job at a small academy in downtown San Francisco, where he taught part-time for years, raising fighters including notable names like Alex Gong.</p>
+                    
+                    <p>When Kru Sam opened Team USA nearly 20 years ago, he raised his second generation of champions. Today, he's on his fourth generation of champions, and the team continues to grow. Along with Coach Cung Le and Professor Navarros, Kru Sam brought the first "smoker" to the Bay Area in 1995, helping establish the region's martial arts competition scene.</p>
                 </div>
                 
                 <p>Through the years, our unique programs have brought about dramatic and positive changes in so many people that we're always eager for the opportunity to share them with others. Joining us will be one of the most rewarding activities for you or your family. All our champions give back to the school and community, supporting the next generation of martial artists.</p>
@@ -1728,8 +1649,210 @@
         }
     }
     
+    // Set default day for mobile schedule based on current day
+    function setDefaultMobileDay() {
+        if (window.innerWidth <= 768) {
+            const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+            const today = new Date().getDay();
+            const todayName = days[today];
+            
+            // Find the corresponding tab button
+            const dayButton = Array.from(document.querySelectorAll('.calendar-tab')).find(
+                btn => btn.textContent.toLowerCase() === todayName
+            );
+            
+            // If today is Sunday or we can't find the button, default to Monday
+            if (todayName === 'sunday' || !dayButton) {
+                const mondayButton = Array.from(document.querySelectorAll('.calendar-tab')).find(
+                    btn => btn.textContent.toLowerCase() === 'monday'
+                );
+                if (mondayButton) {
+                    showMobileDay('monday', mondayButton);
+                }
+            } else {
+                showMobileDay(todayName, dayButton);
+            }
+        }
+    }
+
+    // Schedule data (embedded to avoid CORS issues)
+    const scheduleData = {
+        "Monday": [
+            {"class": "Brazilian Jiu-Jitsu", "time": "11:00 AM – 12:00 PM"},
+            {"class": "Muay Thai", "time": "12:30 PM – 1:30 PM"},
+            {"class": "Open Training", "time": "2:30 PM – 4:30 PM"},
+            {"class": "Kid Muay Thai & Kick Boxing", "time": "4:30 PM – 5:30 PM"},
+            {"class": "Family Muay Thai", "time": "5:30 PM – 6:30 PM"},
+            {"class": "Muay Thai", "time": "6:30 PM – 7:30 PM"},
+            {"class": "Muay Thai", "time": "7:30 PM – 8:30 PM"}
+        ],
+        "Tuesday": [
+            {"class": "Muay Thai", "time": "12:00 PM – 1:00 PM"},
+            {"class": "Open Training", "time": "2:30 PM – 4:30 PM"},
+            {"class": "Muay Thai Strength & Condition", "time": "5:30 PM – 6:30 PM"},
+            {"class": "Muay Thai", "time": "6:30 PM – 7:30 PM"},
+            {"class": "Brazilian Jiu-Jitsu", "time": "7:30 PM – 8:30 PM"}
+        ],
+        "Wednesday": [
+            {"class": "Brazilian Jiu-Jitsu", "time": "11:00 AM – 12:00 PM"},
+            {"class": "Muay Thai", "time": "12:30 PM – 1:30 PM"},
+            {"class": "Open Training", "time": "2:30 PM – 4:30 PM"},
+            {"class": "Kid Muay Thai & Kick Boxing", "time": "4:30 PM – 5:30 PM"},
+            {"class": "Family Muay Thai", "time": "5:30 PM – 6:30 PM"},
+            {"class": "Muay Thai", "time": "6:30 PM – 7:30 PM"},
+            {"class": "Muay Thai", "time": "7:30 PM – 8:30 PM"}
+        ],
+        "Thursday": [
+            {"class": "Muay Thai", "time": "12:00 PM – 1:00 PM"},
+            {"class": "Open Training", "time": "2:30 PM – 4:30 PM"},
+            {"class": "Muay Thai Strength & Condition", "time": "5:30 PM – 6:30 PM"},
+            {"class": "Muay Thai", "time": "6:30 PM – 7:30 PM"},
+            {"class": "Brazilian Jiu-Jitsu", "time": "7:30 PM – 8:30 PM"}
+        ],
+        "Friday": [
+            {"class": "Brazilian Jiu-Jitsu", "time": "11:00 AM – 12:00 PM"},
+            {"class": "Muay Thai", "time": "12:30 PM – 1:30 PM"},
+            {"class": "Kid Muay Thai & Kick Boxing", "time": "4:30 PM – 5:30 PM"},
+            {"class": "Family Muay Thai", "time": "5:30 PM – 6:30 PM"},
+            {"class": "Muay Thai", "time": "6:30 PM – 7:30 PM"},
+            {"class": "Muay Thai", "time": "7:30 PM – 8:30 PM"}
+        ],
+        "Saturday": [
+            {"class": "Muay Thai", "time": "11:30 AM – 12:30 PM"},
+            {"class": "Brazilian Jiu-Jitsu", "time": "12:30 PM – 1:30 PM"},
+            {"class": "No Gi / MMA", "time": "1:30 PM – 2:30 PM"}
+        ]
+    };
+
+    // Load schedule function
+    function loadSchedule() {
+        try {
+            // Use embedded data
+            const schedule = scheduleData;
+            
+            // Render desktop calendar
+            renderDesktopCalendar(schedule);
+            
+            // Render mobile calendar
+            renderMobileCalendar(schedule);
+            
+            // Set default mobile day after rendering
+            setDefaultMobileDay();
+        } catch (error) {
+            console.error('Error loading schedule:', error);
+        }
+    }
+    
+    // Function to get class type for styling
+    function getClassType(className) {
+        if (className.toLowerCase().includes('brazilian jiu-jitsu') || className.toLowerCase().includes('bjj')) {
+            return 'bjj';
+        } else if (className.toLowerCase().includes('mma') || className.toLowerCase().includes('no gi')) {
+            return 'mma';
+        } else if (className.toLowerCase().includes('open training')) {
+            return 'open';
+        } else if (className.toLowerCase().includes('kid')) {
+            return 'kids';
+        } else if (className.toLowerCase().includes('family')) {
+            return 'family';
+        } else if (className.toLowerCase().includes('conditioning') || className.toLowerCase().includes('strength')) {
+            return 'conditioning';
+        }
+        return '';
+    }
+    
+    // Render desktop calendar
+    function renderDesktopCalendar(schedule) {
+        const calendarGrid = document.getElementById('calendar-grid');
+        if (!calendarGrid) return;
+        
+        // Clear existing content
+        calendarGrid.innerHTML = '';
+        
+        // Add day headers
+        const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        days.forEach(day => {
+            const dayHeader = document.createElement('div');
+            dayHeader.className = 'calendar-day';
+            dayHeader.textContent = day;
+            calendarGrid.appendChild(dayHeader);
+        });
+        
+        // Add day cells
+        days.forEach(day => {
+            const dayCell = document.createElement('div');
+            dayCell.className = 'calendar-cell';
+            if (day === 'Saturday') {
+                dayCell.classList.add('weekend');
+            }
+            dayCell.setAttribute('data-day', day);
+            
+            // Add classes for this day
+            if (schedule[day]) {
+                schedule[day].forEach(classItem => {
+                    const timeBlock = document.createElement('div');
+                    const classType = getClassType(classItem.class);
+                    timeBlock.className = `time-block ${classType}`.trim();
+                    
+                    // Extract start time from the time string
+                    const startTime = classItem.time.split(' – ')[0];
+                    timeBlock.innerHTML = `${startTime}<br>${classItem.class}`;
+                    
+                    dayCell.appendChild(timeBlock);
+                });
+            }
+            
+            calendarGrid.appendChild(dayCell);
+        });
+    }
+    
+    // Render mobile calendar
+    function renderMobileCalendar(schedule) {
+        const mobileContainer = document.getElementById('mobile-calendar-container');
+        if (!mobileContainer) return;
+        
+        // Clear existing content
+        mobileContainer.innerHTML = '';
+        
+        const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        
+        days.forEach((day, index) => {
+            const dayContent = document.createElement('div');
+            dayContent.className = index === 0 ? 'calendar-mobile-content active' : 'calendar-mobile-content';
+            dayContent.id = `mobile-${day.toLowerCase()}`;
+            dayContent.style.display = 'none';
+            
+            // Add header
+            const header = document.createElement('h4');
+            header.className = 'mobile-schedule-header';
+            header.textContent = `${day} Schedule`;
+            dayContent.appendChild(header);
+            
+            // Add classes for this day
+            if (schedule[day]) {
+                schedule[day].forEach(classItem => {
+                    const timeBlock = document.createElement('div');
+                    const classType = getClassType(classItem.class);
+                    timeBlock.className = `time-block ${classType} mobile-time-block`.trim();
+                    
+                    // Extract start time from the time string
+                    const startTime = classItem.time.split(' – ')[0];
+                    timeBlock.textContent = `${startTime} - ${classItem.class}`;
+                    
+                    dayContent.appendChild(timeBlock);
+                });
+            }
+            
+            mobileContainer.appendChild(dayContent);
+        });
+    }
+
     // Responsive initialization - Ensures mobile optimizations apply correctly on load and orientation changes
-    window.onload = window.onresize = initMobileCollapse;
+    window.onload = () => {
+        initMobileCollapse();
+        loadSchedule();
+    };
+    window.onresize = initMobileCollapse;
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
