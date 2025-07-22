@@ -184,7 +184,6 @@ Do not modify anything below this line
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>World Team USA - Muay Thai, BJJ & MMA Training</title>
 <style>
-    /* Global reset - ensures consistent rendering across browsers */
     * {
         margin: 0;
         padding: 0;
@@ -192,10 +191,10 @@ Do not modify anything below this line
     }
 
     body {
-        font-family: 'Arial', sans-serif;
+        font-family: Arial, sans-serif;
         line-height: 1.6;
-        color: #000000;
-        background-color: #ffffff;
+        color: #000;
+        background: #fff;
     }
 
     .container {
@@ -204,17 +203,15 @@ Do not modify anything below this line
         padding: 0 20px;
     }
 
-    /* Header - Fixed navigation that stays visible during scroll for easy access to all sections */
     header {
-        background: #ffffff;
-        color: #000000;
+        background: #fff;
         padding: 1rem 0;
         position: fixed;
         width: 100%;
         top: 0;
         z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        border-bottom: 3px solid #dc2626; /* Brand red accent */
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        border-bottom: 3px solid #dc2626;
     }
 
     nav {
@@ -233,7 +230,6 @@ Do not modify anything below this line
     
     .logo img {
         height: 40px;
-        width: auto;
     }
     
     .logo-text {
@@ -249,7 +245,7 @@ Do not modify anything below this line
     }
 
     nav a {
-        color: #000000;
+        color: #000;
         text-decoration: none;
         transition: color 0.3s;
         font-weight: 500;
@@ -259,7 +255,6 @@ Do not modify anything below this line
         color: #dc2626;
     }
 
-    /* Hero Section - Full-screen impact with rotating images to showcase different aspects of training */
     .hero {
         position: relative;
         min-height: 100vh;
@@ -270,26 +265,19 @@ Do not modify anything below this line
         overflow: hidden;
     }
 
-    /* Slideshow - Cycles through gym photos to show diversity (women champions, kids, group training) */
     .hero-slideshow {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         z-index: -2;
     }
 
     .hero-slide {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         background-size: cover;
         background-position: center;
         opacity: 0;
-        transition: opacity 2s ease-in-out; /* Smooth transitions for professional feel */
+        transition: opacity 2s;
     }
 
     .hero-slide.active {
@@ -298,17 +286,13 @@ Do not modify anything below this line
 
     .hero-overlay {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7));
         z-index: -1;
     }
 
     .hero-logo {
         width: 120px;
-        height: auto;
         margin-bottom: 1.5rem;
         filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.8));
     }
@@ -323,16 +307,14 @@ Do not modify anything below this line
     .hero-content .subtitle {
         font-size: 1.3rem;
         margin-bottom: 2rem;
-        color: #ffffff;
+        color: #fff;
         text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
     }
 
     .hero-content p {
         font-size: 1.1rem;
-        margin-bottom: 2rem;
+        margin: 0 auto 2rem;
         max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
         text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
 
@@ -351,7 +333,7 @@ Do not modify anything below this line
         cursor: pointer;
         text-decoration: none;
         display: inline-block;
-        transition: all 0.3s;
+        transition: transform 0.3s;
     }
 
     .btn-primary {
@@ -873,9 +855,8 @@ Do not modify anything below this line
     }
 
     .achievements li {
-        padding: 0.2rem 0;
+        padding: 0.2rem 0 0.2rem 1.2rem;
         position: relative;
-        padding-left: 1.2rem;
         font-size: 0.9rem;
     }
 
@@ -1222,7 +1203,6 @@ Do not modify anything below this line
         padding-top: 80px; /* Account for fixed header */
     }
     
-    /* Utility classes - Reduces inline styles for better maintainability */
     .mobile-time-block { margin: 0.5rem 0; }
     .mobile-schedule-header { color: #dc2626; margin-bottom: 1rem; }
     .instructor-profile { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
@@ -1554,44 +1534,20 @@ Do not modify anything below this line
         buttonElement?.classList.add('active');
     }
     
-    // Responsive behavior management - Adjusts UI complexity based on screen size to optimize user experience
     function initMobileCollapse() {
         const isMobile = window.innerWidth <= 768;
         
-        if (isMobile) {
-            // Show expand buttons for class descriptions
-            document.querySelectorAll('.expand-text-btn').forEach(btn => {
-                btn.style.display = 'block';
-            });
-            
-            
-            // Show mobile calendar
-            document.querySelectorAll('.calendar-mobile-tabs').forEach(tabs => {
-                tabs.style.display = 'flex';
-            });
-            document.querySelectorAll('.calendar-mobile-content').forEach(content => {
-                content.style.display = content.classList.contains('active') ? 'block' : 'none';
-            });
-            
-        } else {
-            // Hide expand buttons for class descriptions on desktop
-            document.querySelectorAll('.expand-text-btn').forEach(btn => {
-                btn.style.display = 'none';
-            });
-            
-            // Expand class descriptions on desktop
-            document.querySelectorAll('.class-card-content p').forEach(p => {
-                p.classList.remove('expanded');
-            });
-            
-            // Hide mobile calendar
-            document.querySelectorAll('.calendar-mobile-tabs').forEach(tabs => {
-                tabs.style.display = 'none';
-            });
-            document.querySelectorAll('.calendar-mobile-content').forEach(content => {
-                content.style.display = 'none';
-            });
-        }
+        document.querySelectorAll('.expand-text-btn').forEach(btn => {
+            btn.style.display = isMobile ? 'block' : 'none';
+        });
+        
+        document.querySelectorAll('.calendar-mobile-tabs').forEach(tabs => {
+            tabs.style.display = isMobile ? 'flex' : 'none';
+        });
+        
+        document.querySelectorAll('.calendar-mobile-content').forEach(content => {
+            content.style.display = isMobile && content.classList.contains('active') ? 'block' : 'none';
+        });
     }
     
     // Set default day for mobile schedule based on current day
@@ -1620,73 +1576,6 @@ Do not modify anything below this line
         }
     }
 
-    // Schedule data (embedded to avoid CORS issues)
-    const scheduleData = {
-        "Monday": [
-            {"class": "Brazilian Jiu-Jitsu", "time": "11:00 AM – 12:00 PM"},
-            {"class": "Muay Thai", "time": "12:30 PM – 1:30 PM"},
-            {"class": "Open Training", "time": "2:30 PM – 4:30 PM"},
-            {"class": "Kid Muay Thai & Kick Boxing", "time": "4:30 PM – 5:30 PM"},
-            {"class": "Family Muay Thai", "time": "5:30 PM – 6:30 PM"},
-            {"class": "Muay Thai", "time": "6:30 PM – 7:30 PM"},
-            {"class": "Muay Thai", "time": "7:30 PM – 8:30 PM"}
-        ],
-        "Tuesday": [
-            {"class": "Muay Thai", "time": "12:00 PM – 1:00 PM"},
-            {"class": "Open Training", "time": "2:30 PM – 4:30 PM"},
-            {"class": "Muay Thai Strength & Condition", "time": "5:30 PM – 6:30 PM"},
-            {"class": "Muay Thai", "time": "6:30 PM – 7:30 PM"},
-            {"class": "Brazilian Jiu-Jitsu", "time": "7:30 PM – 8:30 PM"}
-        ],
-        "Wednesday": [
-            {"class": "Brazilian Jiu-Jitsu", "time": "11:00 AM – 12:00 PM"},
-            {"class": "Muay Thai", "time": "12:30 PM – 1:30 PM"},
-            {"class": "Open Training", "time": "2:30 PM – 4:30 PM"},
-            {"class": "Kid Muay Thai & Kick Boxing", "time": "4:30 PM – 5:30 PM"},
-            {"class": "Family Muay Thai", "time": "5:30 PM – 6:30 PM"},
-            {"class": "Muay Thai", "time": "6:30 PM – 7:30 PM"},
-            {"class": "Muay Thai", "time": "7:30 PM – 8:30 PM"}
-        ],
-        "Thursday": [
-            {"class": "Muay Thai", "time": "12:00 PM – 1:00 PM"},
-            {"class": "Open Training", "time": "2:30 PM – 4:30 PM"},
-            {"class": "Muay Thai Strength & Condition", "time": "5:30 PM – 6:30 PM"},
-            {"class": "Muay Thai", "time": "6:30 PM – 7:30 PM"},
-            {"class": "Brazilian Jiu-Jitsu", "time": "7:30 PM – 8:30 PM"}
-        ],
-        "Friday": [
-            {"class": "Brazilian Jiu-Jitsu", "time": "11:00 AM – 12:00 PM"},
-            {"class": "Muay Thai", "time": "12:30 PM – 1:30 PM"},
-            {"class": "Kid Muay Thai & Kick Boxing", "time": "4:30 PM – 5:30 PM"},
-            {"class": "Family Muay Thai", "time": "5:30 PM – 6:30 PM"},
-            {"class": "Muay Thai", "time": "6:30 PM – 7:30 PM"},
-            {"class": "Muay Thai", "time": "7:30 PM – 8:30 PM"}
-        ],
-        "Saturday": [
-            {"class": "Muay Thai", "time": "11:30 AM – 12:30 PM"},
-            {"class": "Brazilian Jiu-Jitsu", "time": "12:30 PM – 1:30 PM"},
-            {"class": "No Gi / MMA", "time": "1:30 PM – 2:30 PM"}
-        ]
-    };
-
-    // Load schedule function
-    function loadSchedule() {
-        try {
-            // Use embedded data
-            const schedule = scheduleData;
-            
-            // Render desktop calendar
-            renderDesktopCalendar(schedule);
-            
-            // Render mobile calendar
-            renderMobileCalendar(schedule);
-            
-            // Set default mobile day after rendering
-            setDefaultMobileDay();
-        } catch (error) {
-            console.error('Error loading schedule:', error);
-        }
-    }
     
     // Function to get class type for styling
     function getClassType(className) {
@@ -1882,7 +1771,10 @@ Do not modify anything below this line
         
         document.querySelectorAll('a[href^="tel:"]').forEach(link => {
             link.href = `tel:${phone}`;
-            link.textContent = phoneFormatted;
+            // Only update text if it contains a phone number, keep button text like "Contact" unchanged
+            if (link.textContent.includes('(') || link.textContent.includes('415')) {
+                link.textContent = phoneFormatted;
+            }
         });
 
         // Update email references
@@ -1925,61 +1817,45 @@ Do not modify anything below this line
         };
     });
 
-    // Mobile hamburger menu - Collapses navigation on mobile to save screen space while keeping all sections accessible
+    // Mobile menu
     const nav = document.querySelector('nav ul');
     const menuToggle = document.createElement('button');
     menuToggle.innerHTML = '☰';
-    Object.assign(menuToggle.style, {
-        background: 'none',
-        border: 'none', 
-        color: '#000000',
-        fontSize: '1.5rem',
-        display: 'none'
-    });
-    menuToggle.classList.add('menu-toggle');
+    menuToggle.style.cssText = 'background:none;border:none;color:#000;font-size:1.5rem;display:none';
+    menuToggle.className = 'menu-toggle';
 
-    // Add mobile menu styles
     const mobileStyles = document.createElement('style');
     mobileStyles.textContent = `@media (max-width: 768px) {
         .menu-toggle { display: block !important; }
-        nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #ffffff; flex-direction: column; padding: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; padding: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         nav ul.active { display: flex; }
         nav ul li { margin: 0.5rem 0; }
     }`;
     document.head.appendChild(mobileStyles);
 
-    // Insert menu toggle before the nav ul
     nav.parentNode.insertBefore(menuToggle, nav);
-
     menuToggle.onclick = () => nav.classList.toggle('active');
     nav.querySelectorAll('a').forEach(link => {
         link.onclick = () => nav.classList.remove('active');
     });
 
-    // Dynamic header styling - Adds visual feedback during scroll to maintain professional appearance
+    // Header scroll effect
     window.onscroll = () => {
         const header = document.querySelector('header');
-        const isScrolled = window.scrollY > 100;
-        header.style.background = isScrolled ? 'rgba(255, 255, 255, 0.95)' : '#ffffff';
-        header.style.backdropFilter = isScrolled ? 'blur(10px)' : 'none';
+        header.style.background = window.scrollY > 100 ? 'rgba(255,255,255,0.95)' : '#fff';
     };
 
-    // Scroll animations - Subtle animations draw attention to key sections as user scrolls, improving engagement
+    // Scroll animations
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.style.cssText = 'opacity:1;transform:translateY(0)';
             }
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    });
 
     document.querySelectorAll('.intro-card, .class-card, .instructor-card').forEach(el => {
-        Object.assign(el.style, {
-            opacity: '0',
-            transform: 'translateY(20px)',
-            transition: 'opacity 0.6s ease, transform 0.6s ease'
-        });
+        el.style.cssText = 'opacity:0;transform:translateY(20px);transition:opacity 0.6s, transform 0.6s';
         observer.observe(el);
     });
 </script>
