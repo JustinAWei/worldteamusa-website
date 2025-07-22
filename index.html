@@ -1,10 +1,12 @@
 <!DOCTYPE html
+<!-- World Team USA Website - Single-page martial arts gym site optimized for beginners -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>World Team USA - Muay Thai, BJJ & MMA Training</title>
 <style>
+    /* Global reset - ensures consistent rendering across browsers */
     * {
         margin: 0;
         padding: 0;
@@ -24,7 +26,7 @@
         padding: 0 20px;
     }
 
-    /* Header */
+    /* Header - Fixed navigation that stays visible during scroll for easy access to all sections */
     header {
         background: #ffffff;
         color: #000000;
@@ -34,7 +36,7 @@
         top: 0;
         z-index: 1000;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        border-bottom: 3px solid #dc2626;
+        border-bottom: 3px solid #dc2626; /* Brand red accent */
     }
 
     nav {
@@ -77,7 +79,7 @@
         color: #dc2626;
     }
 
-    /* Hero Section */
+    /* Hero Section - Full-screen impact with rotating images to showcase different aspects of training */
     .hero {
         position: relative;
         min-height: 100vh;
@@ -88,6 +90,7 @@
         overflow: hidden;
     }
 
+    /* Slideshow - Cycles through gym photos to show diversity (women champions, kids, group training) */
     .hero-slideshow {
         position: absolute;
         top: 0;
@@ -106,7 +109,7 @@
         background-size: cover;
         background-position: center;
         opacity: 0;
-        transition: opacity 2s ease-in-out;
+        transition: opacity 2s ease-in-out; /* Smooth transitions for professional feel */
     }
 
     .hero-slide.active {
@@ -186,7 +189,7 @@
         transform: translateY(-2px);
     }
 
-    /* Hero Stats */
+    /* Hero Stats - Social proof numbers that build immediate credibility for new students */
     .hero-stats {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -232,7 +235,7 @@
         }
     }
 
-    /* New Student Section */
+    /* New Student Section - Clear pricing options designed to reduce decision paralysis for beginners */
     .new-student {
         background: #f8f9fa;
         padding: 4rem 0;
@@ -245,6 +248,7 @@
         color: #333;
     }
 
+    /* Pricing grid - Intentionally shows multiple entry points to accommodate different commitment levels */
     .intro-options {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -299,7 +303,7 @@
         margin-top: auto;
     }
 
-    /* Classes Section */
+    /* Classes Section - Detailed program descriptions to help beginners understand what each martial art offers */
     .classes {
         padding: 4rem 0;
     }
@@ -430,7 +434,7 @@
         left: 0;
     }
 
-    /* Schedule Section */
+    /* Schedule Section - Visual calendar format makes it easy for beginners to find convenient class times */
     .schedule {
         background: #f8f9fa;
         padding: 4rem 0;
@@ -442,6 +446,7 @@
         font-size: 2rem;
     }
 
+    /* Calendar design - Clean visual hierarchy helps users quickly scan for their preferred class times */
     .calendar-container {
         background: white;
         border-radius: 15px;
@@ -527,6 +532,7 @@
     }
 
 
+    /* Mobile responsiveness - Complex calendar becomes tabbed interface for easier mobile navigation */
     @media (max-width: 768px) {
         .calendar-grid {
             grid-template-columns: 1fr;
@@ -556,7 +562,7 @@
         }
     }
 
-    /* Instructors Section */
+    /* Instructors Section - Detailed credentials build trust and help beginners choose the right instructor */
     .instructors {
         padding: 4rem 0;
         background: #f8f9fa;
@@ -624,16 +630,6 @@
         margin-top: 0.5rem;
     }
 
-    .instructor-header h3 {
-        margin: 0;
-        font-size: 1.5rem;
-    }
-
-    .instructor-title {
-        opacity: 0.9;
-        font-size: 1rem;
-        margin-top: 0.5rem;
-    }
 
     .instructor-content {
         padding: 1.5rem;
@@ -666,6 +662,7 @@
         background: #b91c1c;
     }
 
+    /* Expandable bios - Keeps page scannable while providing depth for interested users */
     .instructor-details {
         max-height: 0;
         overflow: hidden;
@@ -708,7 +705,7 @@
         left: 0;
     }
 
-    /* Philosophy Section */
+    /* Philosophy Section - Addresses beginner concerns about gym intimidation and establishes welcoming culture */
     .about {
         padding: 4rem 0;
         background: #f8f9fa;
@@ -733,6 +730,7 @@
         font-size: 1.1rem;
     }
 
+    /* Philosophy callouts - Visually emphasizes key messages that differentiate this gym from intimidating competitors */
     .philosophy-highlight {
         background: rgba(220, 38, 38, 0.05);
         padding: 2rem 2rem 1.5rem 2rem;
@@ -1040,26 +1038,6 @@
         text-align: center;
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .hero-content h1 {
-            font-size: 2.5rem;
-        }
-        
-        .cta-buttons {
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-        
-        .about-content {
-            grid-template-columns: 1fr;
-        }
-        
-        nav ul {
-            flex-direction: column;
-            gap: 1rem;
-        }
-    }
 
     /* Smooth scrolling */
     html {
@@ -1070,10 +1048,19 @@
     section {
         padding-top: 80px; /* Account for fixed header */
     }
+    
+    /* Utility classes - Reduces inline styles for better maintainability */
+    .mobile-time-block { margin: 0.5rem 0; }
+    .mobile-schedule-header { color: #dc2626; margin-bottom: 1rem; }
+    .expand-btn-hidden { display: none; }
+    .instructor-profile { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .instructor-avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: center top; }
+    .instructor-info h3 { margin: 0; }
+    .instructor-info p { margin: 0; font-weight: bold; }
 </style>
 </head>
 <body>
-<!-- Header -->
+<!-- Header - Fixed navigation with gym branding -->
 <header>
     <nav class="container">
         <div class="logo">
@@ -1092,7 +1079,7 @@
     </nav>
 </header>
 
-<!-- Hero Section -->
+<!-- Hero Section - Full-screen impact with key messaging and social proof stats -->
 <section id="home" class="hero">
     <div class="hero-slideshow">
         <div class="hero-slide active" style="background-image: url('assets/group-champs-lg.avif');"></div>
@@ -1134,7 +1121,7 @@
     </div>
 </section>
 
-<!-- New Student Section -->
+<!-- New Student Section - Multiple pricing tiers to reduce barrier to entry -->
 <section id="new-student" class="new-student">
     <div class="container">
         <h2>Choose Your Training Plan</h2>
@@ -1195,13 +1182,13 @@
                     <li>All skill levels welcome</li>
                     <li>Flexible scheduling</li>
                 </ul>
-                <a href="tel:415-213-5281" class="btn btn-primary">Call</a>
+                <a href="tel:415-213-5281" class="btn btn-primary">(415) 213-5281</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Classes Section -->
+<!-- Classes Section - Detailed program information for decision-making -->
 <section id="classes" class="classes">
     <div class="container">
         <h2>Our Training Programs</h2>
@@ -1216,7 +1203,7 @@
                         <h3>Muay Thai</h3>
                     </div>
                     <p>The Art of Eight Limbs. Learn authentic Thai boxing techniques including <strong>punches, kicks, knees, and elbows</strong> through pad work, bag training, and conditioning. Beginners start with stance, footwork, and basic strikes while developing traditional techniques, cardio conditioning, self-defense skills, and mental discipline. <strong>All fitness levels welcome.</strong></p>
-                    <button class="expand-text-btn" onclick="toggleClassDescription(this)" style="display: none;">Read More</button>
+                    <button class="expand-text-btn expand-btn-hidden" onclick="toggleClassDescription(this)">Read More</button>
                 </div>
             </div>
             <div class="class-card">
@@ -1226,7 +1213,7 @@
                         <h3>Brazilian Jiu-Jitsu</h3>
                     </div>
                     <p>The gentle art of ground fighting. Master <strong>leverage, technique, and strategy</strong> over strength. Learn positions, escapes, submissions, and transitions with focus on technique and timing. Develops ground grappling skills and problem-solving abilities. <strong>Great for smaller people</strong> who want to use technique over strength.</p>
-                    <button class="expand-text-btn" onclick="toggleClassDescription(this)" style="display: none;">Read More</button>
+                    <button class="expand-text-btn expand-btn-hidden" onclick="toggleClassDescription(this)">Read More</button>
                 </div>
             </div>
             <div class="class-card">
@@ -1236,7 +1223,7 @@
                         <h3>Mixed Martial Arts</h3>
                     </div>
                     <p>Combine striking and grappling. The <strong>complete martial arts experience</strong> for serious athletes featuring integration of all martial arts, sparring, technique drilling, and fight preparation. Covers stand-up striking, ground fighting, takedowns & wrestling, and competition preparation. <strong>For dedicated athletes only.</strong></p>
-                    <button class="expand-text-btn" onclick="toggleClassDescription(this)" style="display: none;">Read More</button>
+                    <button class="expand-text-btn expand-btn-hidden" onclick="toggleClassDescription(this)">Read More</button>
                 </div>
             </div>
             <div class="class-card">
@@ -1246,7 +1233,7 @@
                         <h3>Kids & Family Classes</h3>
                     </div>
                     <p>Fun, safe martial arts training for <strong>children and families</strong>. Build confidence and discipline together through games, basic techniques, respect, and discipline in a fun, supportive environment. Features <strong>age-appropriate training, character development, family bonding, and anti-bullying skills</strong>.</p>
-                    <button class="expand-text-btn" onclick="toggleClassDescription(this)" style="display: none;">Read More</button>
+                    <button class="expand-text-btn expand-btn-hidden" onclick="toggleClassDescription(this)">Read More</button>
                 </div>
             </div>
             <div class="class-card">
@@ -1256,7 +1243,7 @@
                         <h3>6-Week Bootcamp</h3>
                     </div>
                     <p>High-intensity fitness program using martial arts-inspired movements. Perfect for those who want <strong>the workout without the fighting</strong>. Features full-body workouts, cardio conditioning, and strength training in a supportive group environment. <strong>45-minute classes, 3 times per week</strong> with kickboxing-inspired moves focused on weight loss and stress relief.</p>
-                    <button class="expand-text-btn" onclick="toggleClassDescription(this)" style="display: none;">Read More</button>
+                    <button class="expand-text-btn expand-btn-hidden" onclick="toggleClassDescription(this)">Read More</button>
                 </div>
             </div>
             <div class="class-card">
@@ -1266,7 +1253,7 @@
                         <h3>Private Lessons</h3>
                     </div>
                     <p>Personalized <strong>one-on-one training</strong> tailored to your specific goals, whether beginner self-defense or advanced competition preparation. Includes focused instruction at your pace, technique refinement, and personalized feedback from expert coaches. Features customized training plan, flexible scheduling, and faster skill development. <strong>All skill levels welcome.</strong></p>
-                    <button class="expand-text-btn" onclick="toggleClassDescription(this)" style="display: none;">Read More</button>
+                    <button class="expand-text-btn expand-btn-hidden" onclick="toggleClassDescription(this)">Read More</button>
                 </div>
             </div>
         </div>
@@ -1274,7 +1261,7 @@
 </section>
 
 
-<!-- Schedule Section -->
+<!-- Schedule Section - Visual class timetable with mobile-friendly tabs -->
 <section id="schedule" class="schedule">
     <div class="container">
         <h2>Class Schedule</h2>
@@ -1291,60 +1278,60 @@
         
         <!-- Mobile Calendar Content -->
         <div class="calendar-mobile-content active" id="mobile-monday" style="display: none;">
-            <h4 style="color: #dc2626; margin-bottom: 1rem;">Monday Schedule</h4>
-            <div class="time-block bjj" style="margin: 0.5rem 0;">11:00 AM - Brazilian Jiu-Jitsu</div>
-            <div class="time-block" style="margin: 0.5rem 0;">12:00 PM - Muay Thai</div>
-            <div class="time-block open" style="margin: 0.5rem 0;">2:30 PM - Open Training</div>
-            <div class="time-block kids" style="margin: 0.5rem 0;">4:30 PM - Kids Muay Thai</div>
-            <div class="time-block family" style="margin: 0.5rem 0;">5:30 PM - Family Muay Thai</div>
-            <div class="time-block" style="margin: 0.5rem 0;">6:30 PM - Muay Thai</div>
-            <div class="time-block" style="margin: 0.5rem 0;">7:30 PM - Muay Thai</div>
+            <h4 class="mobile-schedule-header">Monday Schedule</h4>
+            <div class="time-block bjj mobile-time-block">11:00 AM - Brazilian Jiu-Jitsu</div>
+            <div class="time-block mobile-time-block">12:00 PM - Muay Thai</div>
+            <div class="time-block open mobile-time-block">2:30 PM - Open Training</div>
+            <div class="time-block kids mobile-time-block">4:30 PM - Kids Muay Thai</div>
+            <div class="time-block family mobile-time-block">5:30 PM - Family Muay Thai</div>
+            <div class="time-block mobile-time-block">6:30 PM - Muay Thai</div>
+            <div class="time-block mobile-time-block">7:30 PM - Muay Thai</div>
         </div>
         
         <div class="calendar-mobile-content" id="mobile-tuesday" style="display: none;">
-            <h4 style="color: #dc2626; margin-bottom: 1rem;">Tuesday Schedule</h4>
-            <div class="time-block bjj" style="margin: 0.5rem 0;">11:00 AM - Brazilian Jiu-Jitsu</div>
-            <div class="time-block" style="margin: 0.5rem 0;">12:00 PM - Muay Thai</div>
-            <div class="time-block open" style="margin: 0.5rem 0;">2:30 PM - Open Training</div>
-            <div class="time-block conditioning" style="margin: 0.5rem 0;">5:30 PM - Muay Thai Str & Conditioning</div>
-            <div class="time-block" style="margin: 0.5rem 0;">6:30 PM - Muay Thai</div>
-            <div class="time-block bjj" style="margin: 0.5rem 0;">7:30 PM - Brazilian Jiu-Jitsu</div>
+            <h4 class="mobile-schedule-header">Tuesday Schedule</h4>
+            <div class="time-block bjj mobile-time-block">11:00 AM - Brazilian Jiu-Jitsu</div>
+            <div class="time-block mobile-time-block">12:00 PM - Muay Thai</div>
+            <div class="time-block open mobile-time-block">2:30 PM - Open Training</div>
+            <div class="time-block conditioning mobile-time-block">5:30 PM - Muay Thai Str & Conditioning</div>
+            <div class="time-block mobile-time-block">6:30 PM - Muay Thai</div>
+            <div class="time-block bjj mobile-time-block">7:30 PM - Brazilian Jiu-Jitsu</div>
         </div>
         
         <div class="calendar-mobile-content" id="mobile-wednesday" style="display: none;">
-            <h4 style="color: #dc2626; margin-bottom: 1rem;">Wednesday Schedule</h4>
-            <div class="time-block" style="margin: 0.5rem 0;">12:30 PM - Muay Thai</div>
-            <div class="time-block open" style="margin: 0.5rem 0;">2:30 PM - Open Training</div>
-            <div class="time-block kids" style="margin: 0.5rem 0;">4:30 PM - Kids Muay Thai</div>
-            <div class="time-block family" style="margin: 0.5rem 0;">5:30 PM - Family Muay Thai</div>
-            <div class="time-block" style="margin: 0.5rem 0;">6:30 PM - Muay Thai</div>
-            <div class="time-block bjj" style="margin: 0.5rem 0;">7:30 PM - Brazilian Jiu-Jitsu</div>
+            <h4 class="mobile-schedule-header">Wednesday Schedule</h4>
+            <div class="time-block mobile-time-block">12:30 PM - Muay Thai</div>
+            <div class="time-block open mobile-time-block">2:30 PM - Open Training</div>
+            <div class="time-block kids mobile-time-block">4:30 PM - Kids Muay Thai</div>
+            <div class="time-block family mobile-time-block">5:30 PM - Family Muay Thai</div>
+            <div class="time-block mobile-time-block">6:30 PM - Muay Thai</div>
+            <div class="time-block bjj mobile-time-block">7:30 PM - Brazilian Jiu-Jitsu</div>
         </div>
         
         <div class="calendar-mobile-content" id="mobile-thursday" style="display: none;">
-            <h4 style="color: #dc2626; margin-bottom: 1rem;">Thursday Schedule</h4>
-            <div class="time-block" style="margin: 0.5rem 0;">12:30 PM - Muay Thai</div>
-            <div class="time-block open" style="margin: 0.5rem 0;">2:30 PM - Open Training</div>
-            <div class="time-block conditioning" style="margin: 0.5rem 0;">5:30 PM - Muay Thai Str & Conditioning</div>
-            <div class="time-block" style="margin: 0.5rem 0;">6:30 PM - Muay Thai</div>
-            <div class="time-block" style="margin: 0.5rem 0;">7:30 PM - Muay Thai</div>
+            <h4 class="mobile-schedule-header">Thursday Schedule</h4>
+            <div class="time-block mobile-time-block">12:30 PM - Muay Thai</div>
+            <div class="time-block open mobile-time-block">2:30 PM - Open Training</div>
+            <div class="time-block conditioning mobile-time-block">5:30 PM - Muay Thai Str & Conditioning</div>
+            <div class="time-block mobile-time-block">6:30 PM - Muay Thai</div>
+            <div class="time-block mobile-time-block">7:30 PM - Muay Thai</div>
         </div>
         
         <div class="calendar-mobile-content" id="mobile-friday" style="display: none;">
-            <h4 style="color: #dc2626; margin-bottom: 1rem;">Friday Schedule</h4>
-            <div class="time-block bjj" style="margin: 0.5rem 0;">11:00 AM - Brazilian Jiu-Jitsu</div>
-            <div class="time-block" style="margin: 0.5rem 0;">12:30 PM - Muay Thai</div>
-            <div class="time-block kids" style="margin: 0.5rem 0;">4:30 PM - Kids Muay Thai</div>
-            <div class="time-block family" style="margin: 0.5rem 0;">5:30 PM - Family Muay Thai</div>
-            <div class="time-block" style="margin: 0.5rem 0;">6:30 PM - Muay Thai</div>
-            <div class="time-block" style="margin: 0.5rem 0;">7:30 PM - Muay Thai</div>
+            <h4 class="mobile-schedule-header">Friday Schedule</h4>
+            <div class="time-block bjj mobile-time-block">11:00 AM - Brazilian Jiu-Jitsu</div>
+            <div class="time-block mobile-time-block">12:30 PM - Muay Thai</div>
+            <div class="time-block kids mobile-time-block">4:30 PM - Kids Muay Thai</div>
+            <div class="time-block family mobile-time-block">5:30 PM - Family Muay Thai</div>
+            <div class="time-block mobile-time-block">6:30 PM - Muay Thai</div>
+            <div class="time-block mobile-time-block">7:30 PM - Muay Thai</div>
         </div>
         
         <div class="calendar-mobile-content" id="mobile-saturday" style="display: none;">
-            <h4 style="color: #dc2626; margin-bottom: 1rem;">Saturday Schedule</h4>
-            <div class="time-block" style="margin: 0.5rem 0;">11:30 AM - Muay Thai</div>
-            <div class="time-block bjj" style="margin: 0.5rem 0;">12:30 PM - Brazilian Jiu-Jitsu</div>
-            <div class="time-block mma" style="margin: 0.5rem 0;">1:30 PM - No Gi / MMA</div>
+            <h4 class="mobile-schedule-header">Saturday Schedule</h4>
+            <div class="time-block mobile-time-block">11:30 AM - Muay Thai</div>
+            <div class="time-block bjj mobile-time-block">12:30 PM - Brazilian Jiu-Jitsu</div>
+            <div class="time-block mma mobile-time-block">1:30 PM - No Gi / MMA</div>
         </div>
         
         <div class="calendar-container">
@@ -1417,7 +1404,7 @@
     </div>
 </section>
 
-<!-- Instructors Section -->
+<!-- Instructors Section - Instructor credentials and expandable biographies -->
 <section id="instructors" class="instructors">
     <div class="container">
         <h2>Meet Our Expert Instructors</h2>
@@ -1556,7 +1543,7 @@
 </section>
 
 
-<!-- About & Philosophy Section -->
+<!-- About & Philosophy Section - Addresses newcomer concerns about gym culture -->
 <section id="about" class="about">
     <div class="container">
         <h2>Our Story</h2>
@@ -1576,11 +1563,11 @@
                 <p>We wholeheartedly believe there is no superior style of martial arts and no such thing as having the best school. We offer training only to those whose personality, goals and lifestyle align with our philosophy of total commitment to the martial arts.</p>
                 
                 <div class="instructor-highlight">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                        <img src="assets/coach-owner-kru-sam-p.avif" alt="Kru Sam Phimsoutham" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: center top;">
-                        <div>
-                            <h3 style="margin: 0;">Led by Kru Sam Phimsoutham</h3>
-                            <p style="margin: 0; font-weight: bold;">Owner & Master Instructor</p>
+                    <div class="instructor-profile">
+                        <img src="assets/coach-owner-kru-sam-p.avif" alt="Kru Sam Phimsoutham" class="instructor-avatar">
+                        <div class="instructor-info">
+                            <h3>Led by Kru Sam Phimsoutham</h3>
+                            <p>Owner & Master Instructor</p>
                         </div>
                     </div>
                     <p>Thai/Lao trainer with generational Muay Thai heritage - Muay Boran and Lerdrit run in his family for generations. His father was a Thai General, trainer and referee in Lumpini Stadium. Kru Sam learned his first lesson at age four, immigrated at seven, and at 18 trained for 10 years under Master Toddy, whose father knew his father. He pioneered Muay Thai in the Bay Area by fighting black belts wherever he could until word spread to legends like Sifu Harlan Lee and the Lozada family.</p>
@@ -1592,7 +1579,7 @@
     </div>
 </section>
 
-<!-- Contact Section -->
+<!-- Contact Section - Multiple contact methods and social proof via Instagram feed -->
 <section id="contact" class="contact">
     <div class="container">
         <h2>Ready to Start Training?</h2>
@@ -1648,7 +1635,7 @@
 
 
 <script>
-    // Hero slideshow functionality
+    // Hero slideshow - Rotates through different training photos to show diversity and keep page dynamic
     let currentSlide = 0;
     const slides = document.querySelectorAll('.hero-slide');
     const totalSlides = slides.length;
@@ -1659,67 +1646,41 @@
         slides[currentSlide].classList.add('active');
     }
 
-    // Auto-advance slideshow every 5 seconds
+    // 5-second intervals keep users engaged without being distracting
     setInterval(showNextSlide, 5000);
 
-    // Toggle instructor details
+    // Instructor bio expansion - Keeps page scannable while providing credibility details for trust-building
     function toggleInstructor(button) {
         const details = button.nextElementSibling;
-        const isExpanded = details.classList.contains('expanded');
-        
-        if (isExpanded) {
-            details.classList.remove('expanded');
-            button.textContent = 'Read Full Bio';
-        } else {
-            details.classList.add('expanded');
-            button.textContent = 'Show Less';
-        }
+        const isExpanded = details.classList.toggle('expanded');
+        button.textContent = isExpanded ? 'Show Less' : 'Read Full Bio';
     }
     
-    // Toggle class description
+    // Class description expansion - Mobile-only feature to prevent overwhelming small screens with text
     function toggleClassDescription(button) {
         const paragraph = button.previousElementSibling;
-        const isExpanded = paragraph.classList.contains('expanded');
-        
-        if (isExpanded) {
-            paragraph.classList.remove('expanded');
-            button.textContent = 'Read More';
-        } else {
-            paragraph.classList.add('expanded');
-            button.textContent = 'Read Less';
-        }
+        const isExpanded = paragraph.classList.toggle('expanded');
+        button.textContent = isExpanded ? 'Read Less' : 'Read More';
     }
     
     // Show mobile calendar day
+    // Mobile calendar navigation - Replaces complex grid with simple day-by-day tabs for mobile users
     function showMobileDay(day, buttonElement) {
-        console.log('showMobileDay called with:', day, buttonElement);
-        
-        // Hide all mobile content
         document.querySelectorAll('.calendar-mobile-content').forEach(content => {
             content.classList.remove('active');
             content.style.display = 'none';
         });
+        document.querySelectorAll('.calendar-tab').forEach(tab => tab.classList.remove('active'));
         
-        // Remove active from all tabs
-        document.querySelectorAll('.calendar-tab').forEach(tab => {
-            tab.classList.remove('active');
-        });
-        
-        // Show selected day content
         const selectedContent = document.getElementById(`mobile-${day}`);
-        console.log('Selected content:', selectedContent);
         if (selectedContent) {
             selectedContent.classList.add('active');
             selectedContent.style.display = 'block';
         }
-        
-        // Activate selected tab
-        if (buttonElement) {
-            buttonElement.classList.add('active');
-        }
+        buttonElement?.classList.add('active');
     }
     
-    // Initialize mobile collapse functionality
+    // Responsive behavior management - Adjusts UI complexity based on screen size to optimize user experience
     function initMobileCollapse() {
         const isMobile = window.innerWidth <= 768;
         
@@ -1768,99 +1729,58 @@
         }
     }
     
-    // Initialize on load and resize
-    window.addEventListener('load', initMobileCollapse);
-    window.addEventListener('resize', initMobileCollapse);
+    // Responsive initialization - Ensures mobile optimizations apply correctly on load and orientation changes
+    window.onload = window.onresize = initMobileCollapse;
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.onclick = (e) => {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
+            const target = document.querySelector(anchor.getAttribute('href'));
+            target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
     });
 
-    // Mobile menu toggle (if needed)
+    // Mobile hamburger menu - Collapses navigation on mobile to save screen space while keeping all sections accessible
     const nav = document.querySelector('nav ul');
     const menuToggle = document.createElement('button');
     menuToggle.innerHTML = '☰';
-    menuToggle.style.background = 'none';
-    menuToggle.style.border = 'none';
-    menuToggle.style.color = '#000000';
-    menuToggle.style.fontSize = '1.5rem';
-    menuToggle.style.display = 'none';
+    Object.assign(menuToggle.style, {
+        background: 'none',
+        border: 'none', 
+        color: '#000000',
+        fontSize: '1.5rem',
+        display: 'none'
+    });
     menuToggle.classList.add('menu-toggle');
 
     // Add mobile menu styles
     const mobileStyles = document.createElement('style');
-    mobileStyles.textContent = `
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block !important;
-                color: #000000 !important;
-            }
-            
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: #ffffff;
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            }
-            
-            nav ul.active {
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-        }
-    `;
+    mobileStyles.textContent = `@media (max-width: 768px) {
+        .menu-toggle { display: block !important; }
+        nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #ffffff; flex-direction: column; padding: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav ul.active { display: flex; }
+        nav ul li { margin: 0.5rem 0; }
+    }`;
     document.head.appendChild(mobileStyles);
 
     // Insert menu toggle before the nav ul
     nav.parentNode.insertBefore(menuToggle, nav);
 
-    menuToggle.addEventListener('click', () => {
-        nav.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking on a link
+    menuToggle.onclick = () => nav.classList.toggle('active');
     nav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            nav.classList.remove('active');
-        });
+        link.onclick = () => nav.classList.remove('active');
     });
 
-    // Add scroll effect to header
-    window.addEventListener('scroll', () => {
+    // Dynamic header styling - Adds visual feedback during scroll to maintain professional appearance
+    window.onscroll = () => {
         const header = document.querySelector('header');
-        if (window.scrollY > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
-        } else {
-            header.style.background = '#ffffff';
-            header.style.backdropFilter = 'none';
-        }
-    });
-
-    // Add animation on scroll for elements
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        const isScrolled = window.scrollY > 100;
+        header.style.background = isScrolled ? 'rgba(255, 255, 255, 0.95)' : '#ffffff';
+        header.style.backdropFilter = isScrolled ? 'blur(10px)' : 'none';
     };
 
+    // Scroll animations - Subtle animations draw attention to key sections as user scrolls, improving engagement
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -1868,13 +1788,14 @@
                 entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    // Observe elements for animation
-    document.querySelectorAll('.intro-card, .class-card, .day-schedule, .instructor-card').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    document.querySelectorAll('.intro-card, .class-card, .instructor-card').forEach(el => {
+        Object.assign(el.style, {
+            opacity: '0',
+            transform: 'translateY(20px)',
+            transition: 'opacity 0.6s ease, transform 0.6s ease'
+        });
         observer.observe(el);
     });
 </script>
