@@ -1,6 +1,184 @@
 <!DOCTYPE html
-<!-- World Team USA Website - Single-page martial arts gym site optimized for beginners -->
 <html lang="en">
+<head>
+
+<script>
+/* 
+===========================================
+WEBSITE CONTENT - EDIT THIS SECTION ONLY
+===========================================
+
+To update website content, only edit the information between the quotes below.
+Do not change anything else in this file.
+
+Phone numbers: Enter as numbers only (no parentheses, spaces, or dashes)
+Example: 4152135281 becomes (415) 213-5281 on the website
+*/
+
+const siteData = {
+    "contactInfo": {
+        "phone": 4152135281,
+        "email": "wtusastaff@gmail.com", 
+        "address": "445 Judah St, San Francisco, CA 94122",
+        "socials": {
+            "instagram": "https://www.instagram.com/worldteamusa/",
+            "facebook": "https://www.facebook.com/worldteamusa/",
+            "youtube": "https://www.youtube.com/worldteamusa",
+            "twitter": "https://twitter.com/worldteamusa"
+        },
+        "googleMapsEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8094571267565!2d-122.43831508408686!3d37.786024579756044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580c2c52b7d83%3A0x4d5d6f6f2d4e8b9c!2s2210%20Bush%20St%2C%20San%20Francisco%2C%20CA%2094115!5e0!3m2!1sen!2sus!4v1642095234567!5m2!1sen!2sus"
+    },
+    "trainingPlans": [
+        {
+            "name": "Drop-In Class",
+            "price": "$39", 
+            "description": "Try a single class to get a feel for our training. Choose from any Muay Thai, BJJ, or MMA class.",
+            "features": [
+                "Join any regular class",
+                "Equipment provided",
+                "No commitment required"
+            ],
+            "buttonText": "Book",
+            "buttonLink": "https://checkout.square.site/merchant/DH18E993KT7JY/checkout/MVFOHMMWKYM62EBKBF7Z3LFS"
+        },
+        {
+            "name": "Intro Lesson", 
+            "price": "$69",
+            "description": "Learn the basics with our world-class Muay Thai, BJJ & MMA instructors. Perfect for beginners and those with limited experience.",
+            "features": [
+                "1-hour personalized instruction",
+                "Learn fundamental techniques", 
+                "All equipment provided"
+            ],
+            "buttonText": "Book",
+            "buttonLink": "https://checkout.square.site/merchant/DH18E993KT7JY/checkout/EMCYUJVZISUZUAOXWOHMIHVO"
+        },
+        {
+            "name": "30-Day Unlimited",
+            "price": "$285",
+            "description": "Full access to all in-studio classes and training programs.",
+            "features": [
+                "All group classes included",
+                "Unlimited training sessions",
+                "Personal coaching support"
+            ],
+            "buttonText": "Book",
+            "buttonLink": "https://checkout.square.site/merchant/DH18E993KT7JY/checkout/7CEZ3F2A7IOJ3O3TGNPSOADI"
+        },
+        {
+            "name": "6-Week Bootcamp",
+            "price": "$399",
+            "description": "Structured fitness program with martial arts conditioning.",
+            "features": [
+                "3 classes per week",
+                "High-intensity workouts", 
+                "No contact sparring"
+            ],
+            "buttonText": "Book",
+            "buttonLink": "https://checkout.square.site/merchant/DH18E993KT7JY/checkout/3XXXF7N3IB67I2JVPZZJ3TNR"
+        },
+        {
+            "name": "Private Lessons",
+            "price": "Call",
+            "description": "One-on-one training from beginner self-defense to advanced competition prep with experienced instructors.", 
+            "features": [
+                "Customized training plan",
+                "All skill levels welcome",
+                "Flexible scheduling"
+            ],
+            "buttonText": "Call Us",
+            "buttonLink": "tel:4152135281"
+        }
+    ],
+    "coaches": [
+        {
+            "name": "Kru Sam Phimsoutham",
+            "title": "Owner & Head Instructor",
+            "image": "assets/instructors/kru-sam.avif",
+            "description": "Authentic Thai/Lao trainer with generational Muay Thai heritage. Certified under Master Toddy, Kru Sam has trained 52 champions including 18 world champions over 30+ years. Born in Thailand, trained under Master Toddy."
+        },
+        {
+            "name": "Frederico Bittar Gomes", 
+            "title": "Master Brazilian Jiu-Jitsu Instructor",
+            "image": "assets/instructors/frederico-gomes.avif",
+            "description": "2nd degree Black Belt from Brazil bringing authentic BJJ expertise. Master Frederico combines traditional Brazilian techniques with World Team USA's championship approach."
+        },
+        {
+            "name": "Conrad Bui",
+            "title": "Brazilian Jiu-Jitsu Instructor", 
+            "image": "assets/instructors/conrad-bui.avif",
+            "description": "BJJ black belt under Diego Herzog and Marcel Fortuna. American Cup double gold medalist with lifetime of martial arts experience and assists with day classes as a Muay Thai coach."
+        },
+        {
+            "name": "Silvestre Elexsandro",
+            "title": "Brazilian Jiu-Jitsu Instructor",
+            "image": "assets/instructors/silvestre-elexsandro.avif", 
+            "description": "Experienced BJJ instructor bringing technical expertise and a passion for teaching the gentle art to students of all levels."
+        },
+        {
+            "name": "Coach Luis",
+            "title": "Assistant Instructor",
+            "image": "assets/instructors/luis.avif",
+            "description": "Dedicated assistant instructor supporting the World Team USA training programs with enthusiasm and technical knowledge."
+        }
+    ],
+    "schedule": {
+        "Monday": [
+            {"class": "Brazilian Jiu-Jitsu", "time": "11:00 AM - 12:00 PM"},
+            {"class": "Muay Thai", "time": "12:30 PM - 1:30 PM"}, 
+            {"class": "Open Training", "time": "2:30 PM - 4:30 PM"},
+            {"class": "Kid Muay Thai & Kick Boxing", "time": "4:30 PM - 5:30 PM"},
+            {"class": "Family Muay Thai", "time": "5:30 PM - 6:30 PM"},
+            {"class": "Muay Thai", "time": "6:30 PM - 7:30 PM"},
+            {"class": "Muay Thai", "time": "7:30 PM - 8:30 PM"}
+        ],
+        "Tuesday": [
+            {"class": "Muay Thai", "time": "12:00 PM - 1:00 PM"},
+            {"class": "Open Training", "time": "2:30 PM - 4:30 PM"},
+            {"class": "Muay Thai Strength & Condition", "time": "5:30 PM - 6:30 PM"},
+            {"class": "Muay Thai", "time": "6:30 PM - 7:30 PM"},
+            {"class": "Brazilian Jiu-Jitsu", "time": "7:30 PM - 8:30 PM"}
+        ],
+        "Wednesday": [
+            {"class": "Brazilian Jiu-Jitsu", "time": "11:00 AM - 12:00 PM"},
+            {"class": "Muay Thai", "time": "12:30 PM - 1:30 PM"},
+            {"class": "Open Training", "time": "2:30 PM - 4:30 PM"}, 
+            {"class": "Kid Muay Thai & Kick Boxing", "time": "4:30 PM - 5:30 PM"},
+            {"class": "Family Muay Thai", "time": "5:30 PM - 6:30 PM"},
+            {"class": "Muay Thai", "time": "6:30 PM - 7:30 PM"},
+            {"class": "Muay Thai", "time": "7:30 PM - 8:30 PM"}
+        ],
+        "Thursday": [
+            {"class": "Muay Thai", "time": "12:00 PM - 1:00 PM"},
+            {"class": "Open Training", "time": "2:30 PM - 4:30 PM"},
+            {"class": "Muay Thai Strength & Condition", "time": "5:30 PM - 6:30 PM"},
+            {"class": "Muay Thai", "time": "6:30 PM - 7:30 PM"},
+            {"class": "Brazilian Jiu-Jitsu", "time": "7:30 PM - 8:30 PM"}
+        ],
+        "Friday": [
+            {"class": "Brazilian Jiu-Jitsu", "time": "11:00 AM - 12:00 PM"},
+            {"class": "Muay Thai", "time": "12:30 PM - 1:30 PM"},
+            {"class": "Kid Muay Thai & Kick Boxing", "time": "4:30 PM - 5:30 PM"},
+            {"class": "Family Muay Thai", "time": "5:30 PM - 6:30 PM"},
+            {"class": "Muay Thai", "time": "6:30 PM - 7:30 PM"},
+            {"class": "Muay Thai", "time": "7:30 PM - 8:30 PM"}
+        ],
+        "Saturday": [
+            {"class": "Muay Thai", "time": "11:30 AM - 12:30 PM"},
+            {"class": "Brazilian Jiu-Jitsu", "time": "12:30 PM - 1:30 PM"},
+            {"class": "No Gi / MMA", "time": "1:30 PM - 2:30 PM"}
+        ]
+    }
+};
+
+/* 
+===========================================
+END OF EDITABLE CONTENT
+===========================================
+Do not modify anything below this line
+*/
+</script>
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -675,35 +853,6 @@
         margin-bottom: 1rem;
     }
 
-    .expand-btn {
-        background: #dc2626;
-        color: white;
-        border: none;
-        padding: 0.5rem 1.5rem;
-        border-radius: 25px;
-        cursor: pointer;
-        font-size: 0.9rem;
-        transition: background 0.3s;
-        margin-top: auto;
-        margin-bottom: 1rem;
-        align-self: flex-start;
-    }
-
-    .expand-btn:hover {
-        background: #b91c1c;
-    }
-
-    /* Expandable bios - Keeps page scannable while providing depth for interested users */
-    .instructor-details {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease;
-    }
-
-    .instructor-details.expanded {
-        max-height: 1000px;
-    }
-
     .achievements {
         background: #f8f9fa;
         padding: 1rem;
@@ -1013,15 +1162,6 @@
             font-size: 0.9rem;
         }
         
-        .instructor-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        
-        .instructor-details.expanded {
-            max-height: 1000px;
-        }
         
         /* Mobile Calendar Tabs */
         .calendar-mobile-tabs {
@@ -1085,7 +1225,6 @@
     /* Utility classes - Reduces inline styles for better maintainability */
     .mobile-time-block { margin: 0.5rem 0; }
     .mobile-schedule-header { color: #dc2626; margin-bottom: 1rem; }
-    .expand-btn-hidden { display: none; }
     .instructor-profile { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
     .instructor-avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: center top; }
     .instructor-info h3 { margin: 0; }
@@ -1116,8 +1255,8 @@
     <div class="hero-slideshow">
         <div class="hero-slide active" style="background-image: url('assets/hero/group-champions.avif');"></div>
         <div class="hero-slide" style="background-image: url('assets/hero/women-champions.avif');"></div>
-        <div class="hero-slide" style="background-image: url('assets/hero/kids-bootcamp.avif');"></div>
         <div class="hero-slide" style="background-image: url('assets/hero/large-group.avif');"></div>
+        <div class="hero-slide" style="background-image: url('assets/hero/kids-bootcamp.avif');"></div>
     </div>
     <div class="hero-overlay"></div>
     <div class="container">
@@ -1127,7 +1266,7 @@
             <p class="subtitle">We transform ordinary people into world champions through proven methods and unwavering commitment to excellence.</p>
             <div class="cta-buttons">
                 <a href="#new-student" class="btn btn-primary">Get Started</a>
-                <a href="tel:415-213-5281" class="btn btn-secondary">Contact</a>
+                <a href="tel:4152135281" class="btn btn-secondary">Contact</a>
             </div>
         </div>
         
@@ -1157,62 +1296,8 @@
 <section id="new-student" class="new-student">
     <div class="container">
         <h2>Choose Your Training Plan</h2>
-        <div class="intro-options">
-            <div class="intro-card">
-                <h3>Drop-In Class</h3>
-                <div class="price">$39</div>
-                <p>Try a single class to get a feel for our training. Choose from any Muay Thai, BJJ, or MMA class.</p>
-                <ul class="class-features">
-                    <li>Join any regular class</li>
-                    <li>Equipment provided</li>
-                    <li>No commitment required</li>
-                </ul>
-                <a href="https://checkout.square.site/merchant/DH18E993KT7JY/checkout/MVFOHMMWKYM62EBKBF7Z3LFS" class="btn btn-primary">Book</a>
-            </div>
-            <div class="intro-card">
-                <h3>Intro Lesson</h3>
-                <div class="price">$69</div>
-                <p>Learn the basics with our world-class Muay Thai, BJJ & MMA instructors. Perfect for beginners and those with limited experience.</p>
-                <ul class="class-features">
-                    <li>1-hour personalized instruction</li>
-                    <li>Learn fundamental techniques</li>
-                    <li>All equipment provided</li>
-                </ul>
-                <a href="https://checkout.square.site/merchant/DH18E993KT7JY/checkout/EMCYUJVZISUZUAOXWOHMIHVO" class="btn btn-primary">Book</a>
-            </div>
-            <div class="intro-card">
-                <h3>30-Day Unlimited</h3>
-                <div class="price">$285</div>
-                <p>Full access to all in-studio classes and training programs.</p>
-                <ul class="class-features">
-                    <li>All group classes included</li>
-                    <li>Unlimited training sessions</li>
-                    <li>Personal coaching support</li>
-                </ul>
-                <a href="https://checkout.square.site/merchant/DH18E993KT7JY/checkout/7CEZ3F2A7IOJ3O3TGNPSOADI" class="btn btn-primary">Book</a>
-            </div>
-            <div class="intro-card">
-                <h3>6-Week Bootcamp</h3>
-                <div class="price">$399</div>
-                <p>Structured fitness program with martial arts conditioning.</p>
-                <ul class="class-features">
-                    <li>3 classes per week</li>
-                    <li>High-intensity workouts</li>
-                    <li>No contact sparring</li>
-                </ul>
-                <a href="https://checkout.square.site/merchant/DH18E993KT7JY/checkout/3XXXF7N3IB67I2JVPZZJ3TNR" class="btn btn-primary">Book</a>
-            </div>
-            <div class="intro-card">
-                <h3>Private Lessons</h3>
-                <div class="price">Call</div>
-                <p>One-on-one training from beginner self-defense to advanced competition prep with experienced instructors.</p>
-                <ul class="class-features">
-                    <li>Customized training plan</li>
-                    <li>All skill levels welcome</li>
-                    <li>Flexible scheduling</li>
-                </ul>
-                <a href="tel:415-213-5281" class="btn btn-primary">(415) 213-5281</a>
-            </div>
+        <div class="intro-options" id="training-plans-container">
+            <!-- Training plans will be populated by JavaScript -->
         </div>
     </div>
 </section>
@@ -1325,133 +1410,8 @@
         <div class="philosophy-highlight">
             <p>We believe that in order to service our students properly, <strong>all instructors must be totally committed to the martial arts</strong>. Our staff goes beyond the call of duty to teach students the self-respect, confidence, and discipline that we have learned through the practice of martial arts.</p>
         </div>
-        <div class="instructor-grid">
-            <div class="instructor-card">
-                <div class="instructor-header" onclick="toggleInstructor(this.nextElementSibling.querySelector('.expand-btn'))">
-                    <img src="assets/instructors/kru-sam.avif" alt="Kru Sam Phimsoutham" class="instructor-image">
-                    <div class="instructor-overlay">
-                        <h3>Kru Sam Phimsoutham</h3>
-                        <div class="instructor-title">Owner & Head Instructor</div>
-                    </div>
-                </div>
-                <div class="instructor-content">
-                    <div class="instructor-summary">
-                        <p>Authentic Thai/Lao trainer with generational Muay Thai heritage. Certified under Master Toddy, Kru Sam has trained 52 champions including 18 world champions over 30+ years.</p>
-                    </div>
-                    <button class="expand-btn" onclick="toggleInstructor(this)">Read Full Bio</button>
-                    <div class="instructor-details">
-                        <p>Kru Sam learned Muay Thai from his father, specifically Muay Boran and Lerdrit, which run in his family for generations. His father was a trainer and referee in Lumpini Stadium, and his uncle as well. His first lesson in Muay Boran was given to him when he was four years old.</p>
-                        
-                        <p>He immigrated to the United States at age seven. At the age of 18 Kru Sam then trained under Master Toddy for 10 years to become a certified Muay Thai trainer and teacher. He brought Muay Thai to the Bay Area in 1991.</p>
-                        
-                        <p>Kru Sam has developed ordinary people with zero experience into World Class Fighters, leading generations to go from zero to Champion, both in the ring and outside. All champions give back to the school and community.</p>
-                        
-                        <p><strong>Achievements:</strong> 52 Champions Trained (18 World Champions), Certified by Master Toddy (Bangkok, Thailand), 30+ Years Teaching Experience, Introduced Muay Thai to Bay Area (1991), Muay Boran & Lerdrit Family Lineage</p>
-                        
-                        <p><strong>Classes:</strong> Competition Muay Thai, Elite Muay Thai, Power Fitness & Cardio Conditioning</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="instructor-card">
-                <div class="instructor-header" onclick="toggleInstructor(this.nextElementSibling.querySelector('.expand-btn'))">
-                    <img src="assets/instructors/frederico-gomes.avif" alt="Frederico Bittar Gomes" class="instructor-image">
-                    <div class="instructor-overlay">
-                        <h3>Frederico Bittar Gomes</h3>
-                        <div class="instructor-title">Master Brazilian Jiu-Jitsu Instructor</div>
-                    </div>
-                </div>
-                <div class="instructor-content">
-                    <div class="instructor-summary">
-                        <p>2nd degree Black Belt from Brazil bringing authentic BJJ expertise. Master Frederico combines traditional Brazilian techniques with World Team USA's championship approach.</p>
-                    </div>
-                    <button class="expand-btn" onclick="toggleInstructor(this)">Read Full Bio</button>
-                    <div class="instructor-details">
-                        <p>Master Frederico brings authentic Brazilian Jiu-Jitsu expertise directly from Brazil. As a 2nd degree Black Belt, he represents the highest level of technical proficiency and teaching ability in the gentle art.</p>
-                        
-                        <p>Training under Kru Sam Phimsoutham at World Team USA San Francisco, Frederico combines traditional Brazilian techniques with the disciplined approach that has made World Team USA a championship factory.</p>
-                        
-                        <p><strong>Credentials:</strong> 2nd Degree BJJ Black Belt, Brazilian Native - Authentic Technique, Expert in Ground Fighting & Submissions, Competition Team Coach, Online & In-Person Instruction</p>
-                        
-                        <p><strong>Hometown:</strong> Brazil<br>
-                        <strong>Trainer:</strong> Kru Sam Phimsoutham<br>
-                        <strong>Gym:</strong> World Team USA (San Francisco)</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="instructor-card">
-                <div class="instructor-header" onclick="toggleInstructor(this.nextElementSibling.querySelector('.expand-btn'))">
-                    <img src="assets/instructors/conrad-bui.avif" alt="Dr. Conrad Bui" class="instructor-image">
-                    <div class="instructor-overlay">
-                        <h3>Dr. Conrad Bui</h3>
-                        <div class="instructor-title">Brazilian Jiu-Jitsu Instructor</div>
-                    </div>
-                </div>
-                <div class="instructor-content">
-                    <div class="instructor-summary">
-                        <p>BJJ black belt with multiple gold medals including American Cup double gold. Dr. Bui brings technical precision and competition experience to his teaching.</p>
-                    </div>
-                    <button class="expand-btn" onclick="toggleInstructor(this)">Read Full Bio</button>
-                    <div class="instructor-details">
-                        <p>Dr. Conrad Bui is a BJJ black belt under Diego Herzog and Marcel Fortuna, bringing a lifetime of martial arts experience to his teachings. He also assists with day classes as a Muay Thai coach under Kru Sam's guidance.</p>
-                        
-                        <p>Conrad's competition record speaks to his technical mastery and dedication to the art. His achievements include victories at some of the most prestigious tournaments in Brazilian Jiu-Jitsu.</p>
-                        
-                        <p><strong>Achievements:</strong> American Cup Double Gold Medalist, Pan Jiu-Jitsu Championships Medalist, World Championships No-Gi Medalist, Multiple Tournament Gold Medals, BJJ Black Belt (Herzog/Fortuna Lineage)</p>
-                        
-                        <p><strong>Hometown:</strong> San Francisco<br>
-                        <strong>Trainer:</strong> Kru Sam Phimsoutham<br>
-                        <strong>Gym:</strong> World Team USA (San Francisco)</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="instructor-card">
-                <div class="instructor-header" onclick="toggleInstructor(this.nextElementSibling.querySelector('.expand-btn'))">
-                    <img src="assets/instructors/silvestre-elexsandro.avif" alt="Silvestre Elexsandro" class="instructor-image">
-                    <div class="instructor-overlay">
-                        <h3>Silvestre Elexsandro</h3>
-                        <div class="instructor-title">Brazilian Jiu-Jitsu Instructor</div>
-                    </div>
-                </div>
-                <div class="instructor-content">
-                    <div class="instructor-summary">
-                        <p>Experienced BJJ instructor bringing technical expertise and a passion for teaching the gentle art to students of all levels.</p>
-                    </div>
-                    <button class="expand-btn" onclick="toggleInstructor(this)">Read Full Bio</button>
-                    <div class="instructor-details">
-                        <p>Professor Silvestre Elexsandro is one of our dedicated Brazilian Jiu-Jitsu instructors who helps lead our online classes and in-person training sessions.</p>
-                        
-                        <p>With years of experience in Brazilian Jiu-Jitsu, Silvestre focuses on technical precision and helping students understand the strategic aspects of ground fighting.</p>
-                        
-                        <p><strong>Credentials:</strong> BJJ Black Belt, Online Class Lead Instructor, Technical Specialist, Beginner-Friendly Teaching Style, Ground Fighting Expert</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="instructor-card">
-                <div class="instructor-header" onclick="toggleInstructor(this.nextElementSibling.querySelector('.expand-btn'))">
-                    <img src="assets/instructors/luis.avif" alt="Coach Luis" class="instructor-image">
-                    <div class="instructor-overlay">
-                        <h3>Coach Luis</h3>
-                        <div class="instructor-title">Muay Thai Instructor</div>
-                    </div>
-                </div>
-                <div class="instructor-content">
-                    <div class="instructor-summary">
-                        <p>Dedicated Muay Thai coach bringing energy and technical expertise to help students master the art of eight limbs.</p>
-                    </div>
-                    <button class="expand-btn" onclick="toggleInstructor(this)">Read Full Bio</button>
-                    <div class="instructor-details">
-                        <p>Coach Luis is one of our passionate Muay Thai instructors who helps students develop their striking skills and conditioning.</p>
-                        
-                        <p>Training under Kru Sam's guidance, Coach Luis brings enthusiasm and attention to detail to every class, ensuring students learn proper technique while building fitness.</p>
-                        
-                        <p><strong>Credentials:</strong> Certified Muay Thai Instructor, Pad Work Specialist, Conditioning Coach, Beginner Development Focus, Trained Under Kru Sam</p>
-                    </div>
-                </div>
-            </div>
+        <div class="instructor-grid" id="instructors-container">
+            <!-- Instructors will be populated by JavaScript -->
         </div>
     </div>
 </section>
@@ -1474,7 +1434,7 @@
                 
                 <p>We strive for superiority through our unique curriculum which combines a modern approach with traditional values. Students learn to set short, intermediate, and long-term goals - each level important for achieving success, not just in martial arts, but in everyday life.</p>
                 
-                <p>We believe that in order to service our students properly, <strong>all instructors must be totally committed to the martial arts.</strong> We respect every student's different goals, whether it's to become a world champion or simply to nurture the mind, body and spirit.</p>
+                <p>We believe that in order to service our students properly, all instructors must be totally committed to the martial arts. We respect every student's different goals, whether it's to become a world champion or simply to nurture the mind, body and spirit.</p>
                 
                 <div class="instructor-highlight">
                     <div class="instructor-profile">
@@ -1490,7 +1450,7 @@
                     
                     <p>Kru Sam brought Muay Thai to the Bay Area in 1991, introducing the sport by fighting black belts wherever he could. Word quickly spread to legends like Sifu Harlan Lee, Sifu Shane Lacey, and the Lozada family. SFPD Officer Paul Lozada gave Kru Sam his first teaching job at a small academy in downtown San Francisco, where he taught part-time for years, raising fighters including notable names like Alex Gong.</p>
                     
-                    <p>When Kru Sam opened Team USA nearly 20 years ago, he raised his second generation of champions. Today, he's on his fourth generation of champions, and the team continues to grow. Along with Coach Cung Le and Professor Navarros, Kru Sam brought the first "smoker" to the Bay Area in 1995, helping establish the region's martial arts competition scene.</p>
+                    <p>When Kru Sam opened Team USA nearly 30 years ago, he raised his second generation of champions. Today, he's on his fourth generation of champions, and the team continues to grow. Along with Coach Cung Le and Professor Navarros, Kru Sam brought the first "smoker" to the Bay Area in 1995, helping establish the region's martial arts competition scene.</p>
                 </div>
                 
                 <p>Through the years, our unique programs have brought about dramatic and positive changes in so many people that we're always eager for the opportunity to share them with others. Joining us will be one of the most rewarding activities for you or your family. All our champions give back to the school and community, supporting the next generation of martial artists.</p>
@@ -1569,12 +1529,6 @@
     // 5-second intervals keep users engaged without being distracting
     setInterval(showNextSlide, 5000);
 
-    // Instructor bio expansion - Keeps page scannable while providing credibility details for trust-building
-    function toggleInstructor(button) {
-        const details = button.nextElementSibling;
-        const isExpanded = details.classList.toggle('expanded');
-        button.textContent = isExpanded ? 'Show Less' : 'Read Full Bio';
-    }
     
     // Class description expansion - Mobile-only feature to prevent overwhelming small screens with text
     function toggleClassDescription(button) {
@@ -1610,15 +1564,6 @@
                 btn.style.display = 'block';
             });
             
-            // Collapse instructor details by default
-            document.querySelectorAll('.instructor-details').forEach(details => {
-                details.classList.remove('expanded');
-            });
-            
-            // Reset instructor buttons
-            document.querySelectorAll('.instructor-content .expand-btn').forEach(btn => {
-                btn.textContent = 'Read Full Bio';
-            });
             
             // Show mobile calendar
             document.querySelectorAll('.calendar-mobile-tabs').forEach(tabs => {
@@ -1745,19 +1690,13 @@
     
     // Function to get class type for styling
     function getClassType(className) {
-        if (className.toLowerCase().includes('brazilian jiu-jitsu') || className.toLowerCase().includes('bjj')) {
-            return 'bjj';
-        } else if (className.toLowerCase().includes('mma') || className.toLowerCase().includes('no gi')) {
-            return 'mma';
-        } else if (className.toLowerCase().includes('open training')) {
-            return 'open';
-        } else if (className.toLowerCase().includes('kid')) {
-            return 'kids';
-        } else if (className.toLowerCase().includes('family')) {
-            return 'family';
-        } else if (className.toLowerCase().includes('conditioning') || className.toLowerCase().includes('strength')) {
-            return 'conditioning';
-        }
+        const name = className.toLowerCase();
+        if (name.includes('brazilian jiu-jitsu') || name.includes('bjj')) return 'bjj';
+        if (name.includes('mma') || name.includes('no gi')) return 'mma';
+        if (name.includes('open training')) return 'open';
+        if (name.includes('kid')) return 'kids';
+        if (name.includes('family')) return 'family';
+        if (name.includes('conditioning') || name.includes('strength')) return 'conditioning';
         return '';
     }
     
@@ -1847,11 +1786,134 @@
         });
     }
 
-    // Responsive initialization - Ensures mobile optimizations apply correctly on load and orientation changes
-    window.onload = () => {
+
+    // Load and render training plans
+    function loadTrainingPlans() {
+        const container = document.getElementById('training-plans-container');
+        if (!container) return;
+
+        container.innerHTML = '';
+
+        siteData.trainingPlans.forEach(plan => {
+            const planCard = document.createElement('div');
+            planCard.className = 'intro-card';
+            
+            let featuresHTML = '';
+            for (let feature of plan.features) {
+                featuresHTML += `<li>${feature}</li>`;
+            }
+            
+            planCard.innerHTML = `
+                <h3>${plan.name}</h3>
+                <div class="price">${plan.price}</div>
+                <p>${plan.description}</p>
+                <ul class="class-features">
+                    ${featuresHTML}
+                </ul>
+                <a href="${plan.buttonLink}" class="btn btn-primary">${plan.buttonText}</a>
+            `;
+            
+            container.appendChild(planCard);
+        });
+    }
+
+
+    // Data is now loaded from the top of the file
+
+    // Load and render instructors
+    function loadInstructors() {
+        if (!siteData) return;
+        
+        const container = document.getElementById('instructors-container');
+        if (!container) return;
+
+        container.innerHTML = '';
+
+        siteData.coaches.forEach(coach => {
+            const instructorCard = document.createElement('div');
+            instructorCard.className = 'instructor-card';
+            
+            instructorCard.innerHTML = `
+                <div class="instructor-header">
+                    <img src="${coach.image}" alt="${coach.name}" class="instructor-image">
+                    <div class="instructor-overlay">
+                        <h3>${coach.name}</h3>
+                        <div class="instructor-title">${coach.title}</div>
+                    </div>
+                </div>
+                <div class="instructor-content">
+                    <div class="instructor-summary">
+                        <p>${coach.description}</p>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(instructorCard);
+        });
+    }
+
+    // Load and render schedule
+    function loadSchedule() {
+        if (!siteData) return;
+        
+        try {
+            // Render desktop calendar
+            renderDesktopCalendar(siteData.schedule);
+            
+            // Render mobile calendar
+            renderMobileCalendar(siteData.schedule);
+            
+            // Set default mobile day after rendering
+            setDefaultMobileDay();
+        } catch (error) {
+            console.error('Error loading schedule:', error);
+        }
+    }
+
+    // Load and update contact information throughout the site
+    function loadContactInfo() {
+        if (!siteData) return;
+        
+        const contactData = siteData.contactInfo;
+        
+        // Format phone number: 4152135281 -> (415) 213-5281
+        const phone = contactData.phone.toString();
+        const phoneFormatted = `(${phone.slice(0,3)}) ${phone.slice(3,6)}-${phone.slice(6)}`;
+        
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.href = `tel:${phone}`;
+            link.textContent = phoneFormatted;
+        });
+
+        // Update email references
+        document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+            link.href = `mailto:${contactData.email}`;
+            link.textContent = contactData.email;
+        });
+
+        // Update address references
+        document.querySelectorAll('[data-contact="address"]').forEach(element => {
+            element.textContent = contactData.address;
+        });
+
+        // Update map embed
+        const mapFrame = document.querySelector('iframe[src*="google.com/maps"]');
+        if (mapFrame) {
+            mapFrame.src = contactData.googleMapsEmbedUrl;
+        }
+    }
+
+    // Initialize all site content
+    function initializeSite() {
         initMobileCollapse();
         loadSchedule();
-    };
+        loadTrainingPlans();
+        loadInstructors();
+        loadContactInfo();
+    }
+
+    // Responsive initialization - Ensures mobile optimizations apply correctly on load and orientation changes
+    window.onload = initializeSite;
     window.onresize = initMobileCollapse;
 
     // Smooth scrolling for navigation links
