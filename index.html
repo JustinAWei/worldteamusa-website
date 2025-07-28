@@ -191,16 +191,24 @@ Do not modify anything below this line
     }
 
     body {
-        font-family: Arial, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
         line-height: 1.6;
         color: #000;
         background: #fff;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
     }
 
     .container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 20px;
+    }
+    
+    @media (max-width: 768px) {
+        .container {
+            padding: 0 15px;
+        }
     }
 
     header {
@@ -264,6 +272,12 @@ Do not modify anything below this line
         color: white;
         overflow: hidden;
     }
+    
+    @media (max-width: 768px) {
+        .hero {
+            min-height: 80vh;
+        }
+    }
 
     .hero-slideshow {
         position: absolute;
@@ -296,12 +310,26 @@ Do not modify anything below this line
         margin-bottom: 1.5rem;
         filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.8));
     }
+    
+    @media (max-width: 768px) {
+        .hero-logo {
+            width: 80px;
+            margin-bottom: 1rem;
+        }
+    }
 
     .hero-content h1 {
         font-size: 3.5rem;
         margin-bottom: 1rem;
         font-weight: bold;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+    
+    @media (max-width: 768px) {
+        .hero-content h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
     }
 
     .hero-content .subtitle {
@@ -310,12 +338,28 @@ Do not modify anything below this line
         color: #fff;
         text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
     }
+    
+    @media (max-width: 768px) {
+        .hero-content .subtitle {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 0 1rem;
+        }
+    }
 
     .hero-content p {
         font-size: 1.1rem;
         margin: 0 auto 2rem;
         max-width: 600px;
         text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+    
+    @media (max-width: 768px) {
+        .hero-content p {
+            font-size: 0.95rem;
+            margin: 0 auto 1.5rem;
+            padding: 0 1rem;
+        }
     }
 
     .cta-buttons {
@@ -334,6 +378,13 @@ Do not modify anything below this line
         text-decoration: none;
         display: inline-block;
         transition: transform 0.3s;
+    }
+    
+    @media (max-width: 768px) {
+        .btn {
+            padding: 12px 24px;
+            font-size: 0.95rem;
+        }
     }
 
     .btn-primary {
@@ -383,39 +434,34 @@ Do not modify anything below this line
     }
 
     @media (max-width: 768px) {
-        .hero-content h1 {
-            font-size: 2rem;
-            line-height: 1.3;
-            word-break: break-word;
-        }
-        
-        .hero-content .subtitle {
-            font-size: 1.1rem;
-            padding: 0 1rem;
-        }
-        
         .cta-buttons {
-            flex-direction: column;
-            gap: 1rem;
+            flex-direction: row;
+            gap: 0.75rem;
             padding: 0 1rem;
+            justify-content: center;
         }
         
         .cta-buttons .btn {
-            width: 100%;
+            flex: 1;
+            max-width: 150px;
             text-align: center;
+            padding: 12px 20px;
+            font-size: 0.95rem;
         }
         
         .hero-stats {
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding: 1.5rem 0;
         }
         
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
         
         .stat-label {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
         }
     }
 
@@ -424,12 +470,26 @@ Do not modify anything below this line
         background: #f8f9fa;
         padding: 4rem 0;
     }
+    
+    @media (max-width: 768px) {
+        .new-student {
+            padding: 2.5rem 0;
+        }
+    }
 
     .new-student h2 {
         text-align: center;
         margin-bottom: 1.5rem;
         font-size: 2rem;
         color: #333;
+    }
+    
+    @media (max-width: 768px) {
+        .new-student h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding: 0 1rem;
+        }
     }
 
     /* Pricing grid - Intentionally shows multiple entry points to accommodate different commitment levels */
@@ -461,11 +521,24 @@ Do not modify anything below this line
         flex-direction: column;
         height: 100%;
     }
+    
+    @media (max-width: 768px) {
+        .intro-card {
+            padding: 1.5rem 1rem;
+            margin-bottom: 1rem;
+        }
+    }
 
     .intro-card h3 {
         color: #dc2626;
         margin-bottom: 0.5rem;
         font-size: 1.5rem;
+    }
+    
+    @media (max-width: 768px) {
+        .intro-card h3 {
+            font-size: 1.25rem;
+        }
     }
 
     .intro-card .price {
@@ -474,20 +547,42 @@ Do not modify anything below this line
         color: #333;
         margin: 0.5rem 0 1rem 0;
     }
+    
+    @media (max-width: 768px) {
+        .intro-card .price {
+            font-size: 1.75rem;
+            margin: 0.25rem 0 0.75rem 0;
+        }
+    }
 
     .intro-card p {
         margin-bottom: 1rem;
-        flex-grow: 1;
+        flex: 1 1 auto;
         display: flex;
         align-items: center;
         text-align: center;
         justify-content: center;
         min-height: 60px;
     }
+    
+    @media (max-width: 768px) {
+        .intro-card p {
+            font-size: 0.9rem;
+            min-height: auto;
+            margin-bottom: 0.75rem;
+        }
+    }
 
     .intro-card .class-features {
         margin: 1rem 0 1.5rem 0;
         text-align: left;
+    }
+    
+    @media (max-width: 768px) {
+        .intro-card .class-features {
+            margin: 0.75rem 0 1rem 0;
+            font-size: 0.9rem;
+        }
     }
 
     .intro-card .btn {
@@ -498,11 +593,25 @@ Do not modify anything below this line
     .classes {
         padding: 4rem 0;
     }
+    
+    @media (max-width: 768px) {
+        .classes {
+            padding: 2.5rem 0;
+        }
+    }
 
     .classes h2 {
         text-align: center;
         margin-bottom: 1.5rem;
         font-size: 2rem;
+    }
+    
+    @media (max-width: 768px) {
+        .classes h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding: 0 1rem;
+        }
     }
 
     .class-grid {
@@ -526,6 +635,16 @@ Do not modify anything below this line
 
     .class-card-content {
         padding: 1.5rem;
+    }
+    
+    @media (max-width: 768px) {
+        .class-card-content {
+            padding: 1rem;
+        }
+        
+        .class-card-content h3 {
+            font-size: 1.25rem;
+        }
     }
 
     .class-card-header {
@@ -616,6 +735,14 @@ Do not modify anything below this line
         position: relative;
         padding-left: 1.5rem;
     }
+    
+    @media (max-width: 768px) {
+        .class-features li {
+            font-size: 0.9rem;
+            padding: 0.2rem 0;
+            padding-left: 2rem;
+        }
+    }
 
     .class-features li:before {
         content: "✓";
@@ -630,11 +757,24 @@ Do not modify anything below this line
         background: #f8f9fa;
         padding: 4rem 0;
     }
+    
+    @media (max-width: 768px) {
+        .schedule {
+            padding: 2.5rem 0;
+        }
+    }
 
     .schedule h2 {
         text-align: center;
         margin-bottom: 1.5rem;
         font-size: 2rem;
+    }
+    
+    @media (max-width: 768px) {
+        .schedule h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
     }
 
     /* Calendar design - Clean visual hierarchy helps users quickly scan for their preferred class times */
@@ -758,11 +898,25 @@ Do not modify anything below this line
         padding: 4rem 0;
         background: #f8f9fa;
     }
+    
+    @media (max-width: 768px) {
+        .instructors {
+            padding: 2.5rem 0;
+        }
+    }
 
     .instructors h2 {
         text-align: center;
         margin-bottom: 1.5rem;
         font-size: 2rem;
+    }
+    
+    @media (max-width: 768px) {
+        .instructors h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding: 0 1rem;
+        }
     }
 
     .instructor-grid {
@@ -834,6 +988,13 @@ Do not modify anything below this line
         line-height: 1.6;
         margin-bottom: 1rem;
     }
+    
+    @media (max-width: 768px) {
+        .instructor-summary {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+    }
 
     .achievements {
         background: #f8f9fa;
@@ -872,12 +1033,25 @@ Do not modify anything below this line
         background: #f8f9fa;
         color: #000000;
     }
+    
+    @media (max-width: 768px) {
+        .about {
+            padding: 2.5rem 0;
+        }
+    }
 
     .about h2 {
         text-align: center;
         margin-bottom: 1.5rem;
         font-size: 2rem;
         color: #dc2626;
+    }
+    
+    @media (max-width: 768px) {
+        .about h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
     }
 
     .about-content {
@@ -889,6 +1063,30 @@ Do not modify anything below this line
     .about-content p {
         margin-bottom: 1.5rem;
         font-size: 1.1rem;
+    }
+    
+    @media (max-width: 768px) {
+        .about-content p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            padding: 0 1rem;
+        }
+    }
+    
+    .about-text h3 {
+        color: #dc2626;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    @media (max-width: 768px) {
+        .about-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            padding: 0 1rem;
+            text-align: left;
+        }
     }
 
     /* Philosophy callouts - Visually emphasizes key messages that differentiate this gym from intimidating competitors */
@@ -912,6 +1110,18 @@ Do not modify anything below this line
         font-family: Georgia, serif;
         color: #333;
         font-weight: 400;
+    }
+    
+    @media (max-width: 768px) {
+        .philosophy-highlight {
+            padding: 1.5rem 1.5rem 1rem 1.5rem;
+            margin: 1.5rem 1rem;
+        }
+        
+        .philosophy-highlight p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
     }
 
     .philosophy-highlight::before {
@@ -991,11 +1201,24 @@ Do not modify anything below this line
         padding: 3rem 0;
         text-align: center;
     }
+    
+    @media (max-width: 768px) {
+        .contact {
+            padding: 2rem 0;
+        }
+    }
 
     .contact h2 {
         margin-bottom: 0.5rem;
         font-size: 1.5rem;
         color: #000;
+    }
+    
+    @media (max-width: 768px) {
+        .contact h2 {
+            font-size: 1.25rem;
+            padding: 0 1rem;
+        }
     }
 
     .contact-info {
@@ -1040,6 +1263,12 @@ Do not modify anything below this line
         margin: 0.5rem 0;
         font-size: 1rem;
         line-height: 1.4;
+    }
+    
+    @media (max-width: 768px) {
+        .contact-details p {
+            font-size: 0.9rem;
+        }
     }
 
     .contact-details a {
@@ -1150,6 +1379,40 @@ Do not modify anything below this line
             overflow-x: auto;
             margin-bottom: 1rem;
             border-bottom: 2px solid #ddd;
+            position: relative;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .calendar-mobile-tabs::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* Scroll indicators */
+        .calendar-mobile-tabs::before,
+        .calendar-mobile-tabs::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 30px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .calendar-mobile-tabs::before {
+            left: 0;
+            background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+        }
+        
+        .calendar-mobile-tabs::after {
+            right: 0;
+            background: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+        }
+        
+        .mobile-tabs-wrapper {
+            position: relative;
         }
         
         .calendar-tab {
@@ -1201,6 +1464,12 @@ Do not modify anything below this line
     /* Section spacing */
     section {
         padding-top: 80px; /* Account for fixed header */
+    }
+    
+    @media (max-width: 768px) {
+        section {
+            padding-top: 60px;
+        }
     }
     
     .mobile-time-block { margin: 0.5rem 0; }
@@ -1361,13 +1630,15 @@ Do not modify anything below this line
         <h2>Class Schedule</h2>
         
         <!-- Mobile Calendar Tabs -->
-        <div class="calendar-mobile-tabs" style="display: none;">
-            <button class="calendar-tab active" onclick="showMobileDay('monday', this)">Monday</button>
-            <button class="calendar-tab" onclick="showMobileDay('tuesday', this)">Tuesday</button>
-            <button class="calendar-tab" onclick="showMobileDay('wednesday', this)">Wednesday</button>
-            <button class="calendar-tab" onclick="showMobileDay('thursday', this)">Thursday</button>
-            <button class="calendar-tab" onclick="showMobileDay('friday', this)">Friday</button>
-            <button class="calendar-tab" onclick="showMobileDay('saturday', this)">Saturday</button>
+        <div class="mobile-tabs-wrapper" style="display: none; position: relative;">
+            <div class="calendar-mobile-tabs">
+                <button class="calendar-tab active" onclick="showMobileDay('monday', this)">Monday</button>
+                <button class="calendar-tab" onclick="showMobileDay('tuesday', this)">Tuesday</button>
+                <button class="calendar-tab" onclick="showMobileDay('wednesday', this)">Wednesday</button>
+                <button class="calendar-tab" onclick="showMobileDay('thursday', this)">Thursday</button>
+                <button class="calendar-tab" onclick="showMobileDay('friday', this)">Friday</button>
+                <button class="calendar-tab" onclick="showMobileDay('saturday', this)">Saturday</button>
+            </div>
         </div>
         
         <!-- Mobile Calendar Content - Will be populated by JavaScript -->
@@ -1541,8 +1812,8 @@ Do not modify anything below this line
             btn.style.display = isMobile ? 'block' : 'none';
         });
         
-        document.querySelectorAll('.calendar-mobile-tabs').forEach(tabs => {
-            tabs.style.display = isMobile ? 'flex' : 'none';
+        document.querySelectorAll('.mobile-tabs-wrapper').forEach(wrapper => {
+            wrapper.style.display = isMobile ? 'block' : 'none';
         });
         
         document.querySelectorAll('.calendar-mobile-content').forEach(content => {
@@ -1827,9 +2098,11 @@ Do not modify anything below this line
     const mobileStyles = document.createElement('style');
     mobileStyles.textContent = `@media (max-width: 768px) {
         .menu-toggle { display: block !important; }
-        nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; padding: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; padding: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 999; }
         nav ul.active { display: flex; }
-        nav ul li { margin: 0.5rem 0; }
+        nav ul li { margin: 0.5rem 0; width: 100%; }
+        nav ul a { display: block; padding: 0.5rem 1rem; border-radius: 5px; }
+        nav ul a:hover { background: #f8f9fa; }
     }`;
     document.head.appendChild(mobileStyles);
 
