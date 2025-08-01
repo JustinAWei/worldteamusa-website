@@ -1033,6 +1033,63 @@ Do not modify anything below this line
         left: 0;
     }
 
+    /* Mobile styles for compact instructor view */
+    @media (max-width: 768px) {
+        .instructor-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 0 1rem;
+        }
+        
+        .instructor-card {
+            height: auto;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        
+        .instructor-card:hover {
+            transform: none;
+        }
+        
+        .instructor-header {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: white;
+        }
+        
+        .instructor-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        .instructor-overlay {
+            position: static;
+            background: none;
+            padding: 0;
+        }
+        
+        .instructor-header h3 {
+            font-size: 1.2rem;
+            color: #000;
+            margin: 0;
+        }
+        
+        .instructor-title {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+        
+        .instructor-content {
+            display: none;
+        }
+    }
+
     /* Philosophy Section - Addresses beginner concerns about gym intimidation and establishes welcoming culture */
     .about {
         padding: 4rem 0;
